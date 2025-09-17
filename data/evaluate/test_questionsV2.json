@@ -1,0 +1,502 @@
+[
+  {
+    "question": "What is the definition of the White Coat Phenomenon (WCP)?",
+    "answer": "WCP is the phenomenon where the BP in an office setting is higher than current guidelines recommend (thus in the ‘hypertensive’ range), whether or not a person is on BP medication, while the out-of-office BP (in the same person) is below current guideline recommendation for out-of-office BP goals.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What are the five most predictive variables for White Coat Effect (WCE) found by a machine learning algorithm study?",
+    "answer": "The five most predictive variables, rank ordered, were office diastolic pressure, followed by office systolic pressure, kidney function (estimated glomerular filtration rate), blood glucose concentration and current smoking.",
+    "query_length": "long"
+  },
+  {
+    "question": "Is White Coat Uncontrolled Hypertension (WUCH) associated with any increased cardiovascular risk?",
+    "answer": "Meta-analytic data suggest that WUCH is not associated with any elevated risk.",
+    "query_length": "short"
+  },
+  {
+    "question": "What was the prevalence of Left Ventricular Diastolic Dysfunction (LVDD) at baseline in the community hypertension cohort study?",
+    "answer": "At baseline, 35 of the 283 hypertensions were diagnosed with LVDD, which corresponds to a prevalence of 12.3%.",
+    "query_length": "long"
+  },
+  {
+    "question": "How did the frequency of LVDD differ between men and women in the study?",
+    "answer": "Women had a higher frequency of LVDD (15.5%) than men (8%).",
+    "query_length": "mid"
+  },
+  {
+    "question": "What is LVDD a forerunner of?",
+    "answer": "LVDD is demonstrated to be a forerunner of heart failure, especially those heart failure with preserved ejection fraction (HFpEF).",
+    "query_length": "short"
+  },
+  {
+    "question": "What was the prevalence of LVH among the young hypertensive group when measured by 2D-transthoracic echocardiography?",
+    "answer": "The prevalence of LVH among the hypertensive group was 20.9% using 2D-transthoracic echocardiography.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the relationship found between total mTOR and ANG-II in the study of young hypertensives?",
+    "answer": "The total mTOR moderately correlated positively with ANG-II.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Which biochemical parameters were significantly higher in hypertensives with LVH compared to those without LVH and normotensives?",
+    "answer": "Hypertensives with LVH had significantly higher serum levels of TG, TG/HDL, TC/HDL, chemerin, troponin T, Galectin-3 and total mTOR compared to normotensive and hypertensives without LVH.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the proposed mechanism by which HMG-CoA reductase inhibitor improves vascular endothelial function impairment in elderly essential hypertension?",
+    "answer": "HMG-CoA reductase inhibitor improves elderly essential hypertension-induced vascular endothelial function impairment by blocking the JAK/STAT pathway.",
+    "query_length": "long"
+  },
+  {
+    "question": "In the clinical trial on HMG-CoA reductase inhibitors, what two drugs were given to the observation group?",
+    "answer": "The observation group received oral Amlodipine Besylate Tablets plus the HMG-CoA reductase inhibitor atorvastatin calcium.",
+    "query_length": "mid"
+  },
+  {
+    "question": "How did atorvastatin calcium and AG490 affect the expression levels of p-JAK2/JAK2 and p-STAT3/STAT3 in modeled rats?",
+    "answer": "Both the HMG-CoA reductase inhibitor (atorvastatin calcium) and AG490 (a JAK/STAT pathway inhibitor) decreased p-JAK2/JAK2 and p-STAT3/STAT3 expression levels.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is barnidipine?",
+    "answer": "Barnidipine is a long-acting dihydropyridinic calcium channel blocker (CCB).",
+    "query_length": "short"
+  },
+  {
+    "question": "In the BASIC-HT study, what was the main reason for patients switching from other CCBs like amlodipine or lercanidipine to barnidipine-based therapy?",
+    "answer": "The main reason for switching to barnidipine-based therapy was mainly due to safety (42%), lack of efficacy (28%), or both (11%).",
+    "query_length": "long"
+  },
+  {
+    "question": "How did the combination of barnidipine plus losartan affect left ventricular mass index compared to lercanidipine plus losartan in hypertensive patients with diabetes?",
+    "answer": "A significant reduction in left ventricular mass index was identified in patients who received barnidipine plus losartan compared with lercanidipine plus losartan (p<0.05).",
+    "query_length": "long"
+  },
+  {
+    "question": "What is masked hypertension (MHT)?",
+    "answer": "Masked hypertension (MHT) is defined as having normal blood pressure in the office but high blood pressure outside the office (office normotension and home hypertension).",
+    "query_length": "short"
+  },
+  {
+    "question": "In the TMM CommCohort Study, what was the multivariate odds ratio for masked hypertension in male participants with depressive symptoms?",
+    "answer": "The multivariate odds ratio for masked hypertension in the patients with depressive symptoms was 1.72 (95% confidence interval: 1.26–2.34) in male participants.",
+    "query_length": "long"
+  },
+  {
+    "question": "How were depressive symptoms assessed in the study on masked hypertension?",
+    "answer": "Depressive symptoms were assessed using the Center for Epidemiologic Studies Depression Scale (CES-D), Japanese version.",
+    "query_length": "mid"
+  },
+  {
+    "question": "According to the 2017–2018 Bangladesh Demographic and Health Survey, what was the prevalence of hypertension based on the JNC 7 guideline?",
+    "answer": "The prevalence of hypertension was 24.0% according to the JNC 7 guideline.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the prevalence of hypertension in Bangladesh when using the 2017 ACC/AHA guideline?",
+    "answer": "The prevalence of hypertension was 50.5% according to the 2017 ACC/AHA guideline.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Which administrative divisions in Bangladesh had higher prevalence ratios for hypertension according to both JNC 7 and ACC/AHA guidelines?",
+    "answer": "Participants from Rangpur and Rajshahi divisions had higher prevalence ratios for being hypertensive according to both guidelines.",
+    "query_length": "long"
+  },
+  {
+    "question": "What are microRNAs?",
+    "answer": "MicroRNAs are small non-coding RNAs that regulate gene and protein expression at the post-transcriptional level.",
+    "query_length": "short"
+  },
+  {
+    "question": "Which specific microRNA was identified as being involved in regulating the RAAS, SNS, and LVH processes in systemic arterial hypertension?",
+    "answer": "MiR-133a was observed to regulate all three processes: the renin–angiotensin–aldosterone system (RAAS), sympathetic nervous system (SNS), and left ventricular hypertrophy (LVH).",
+    "query_length": "long"
+  },
+  {
+    "question": "In Ang-II-stimulated human umbilical vein endothelial cells (HUVECs), how was miR-133a expression affected and what was the consequence?",
+    "answer": "In Ang-II-stimulated HUVECs, miR-133a was down regulated, which increased prorenin receptor (PRR) expression and exacerbated the signaling pathway of the RAAS, promoting apoptosis.",
+    "query_length": "long"
+  },
+  {
+    "question": "Define isolated systolic hypertension (ISH).",
+    "answer": "Isolated systolic hypertension (ISH) is defined as having a systolic blood pressure (SBP) of ≥ 140 mmHg but a diastolic blood pressure (DBP) of < 90 mmHg.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the UK Biobank study, how did participants with ISH taking BP medications compare to normotensives in terms of white matter hyperintensity (WMH) volume?",
+    "answer": "Compared with normotensives, those with ISH and taking BP medications have larger white matter hyperintensity (WMH) volumes (β=.24 [95% CI 0.20–0.28]).",
+    "query_length": "long"
+  },
+  {
+    "question": "What is isolated diastolic hypertension (IDH)?",
+    "answer": "Isolated diastolic hypertension (IDH) is defined as having a diastolic blood pressure (DBP) of ≥ 90 mmHg but a systolic blood pressure (SBP) of < 140 mmHg.",
+    "query_length": "short"
+  },
+  {
+    "question": "In spontaneously hypertensive rats (SHR), what is the effect of testosterone on the development of hypertension?",
+    "answer": "Testosterone promotes the development of hypertension in male spontaneously hypertensive rats (SHR).",
+    "query_length": "mid"
+  },
+  {
+    "question": "How do male and female spontaneously hypertensive rats differ in terms of their renin-angiotensin system (RAS) components?",
+    "answer": "Males have greater expression of classical RAS components (e.g., plasma renin activity, AT1 mRNA expression), whereas females have greater activation of the non-classical RAS (e.g., greater renal and vascular AT2 receptor expression, higher levels of Ang 1-7 in the kidney).",
+    "query_length": "long"
+  },
+  {
+    "question": "What effect does ovariectomy have on the development of hypertension in female SHR?",
+    "answer": "Ovariectomy at 4 weeks of age had no effect on the development of hypertension in female spontaneously hypertensive rats.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the comparative P300 study, how did the P300 latencies of hypertensives and normotensives differ?",
+    "answer": "Hypertensives and normotensives differed significantly concerning P300 potentials’ latency, with hypertensives showing longer latencies (p-value: 0.001).",
+    "query_length": "mid"
+  },
+  {
+    "question": "What is the P300 event-related potential presumed to reflect?",
+    "answer": "The P300 is presumed to reflect processes related to working memory and contextual updating.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Did the Hindi Mini-mental Status Examination (HMSE) and Hindi Montreal Cognitive Assessment (MoCA) scores differ significantly between hypertensive and normotensive groups?",
+    "answer": "No, the HMSE, Hindi MoCA, and choice reaction time (CRT) scores did not differ significantly between the hypertensive and normotensive groups.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the major difference between the ISH global guidelines and other international hypertension guidelines?",
+    "answer": "The major difference is the stratified recommendations to accommodate differences in available resources between countries and within countries, separating optimal versus essential criteria for diagnosis and treatment.",
+    "query_length": "long"
+  },
+  {
+    "question": "What BP threshold did the 2017 ACC/AHA guidelines set for diagnosing hypertension?",
+    "answer": "The 2017 ACC/AHA guidelines set a lower cut-off point for the diagnosis of hypertension at a blood pressure of ≥ 130/80 mmHg.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What is the PASCAR recommendation for treating patients with stage 1 hypertension who have not responded to lifestyle modifications?",
+    "answer": "PASCAR recommends treating all patients diagnosed with hypertension, including those with stage 1 hypertension who have not responded to lifestyle modifications.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is subjective life expectancy (SLE)?",
+    "answer": "Subjective life expectancy (SLE) is the perceived probability of surviving to a target age.",
+    "query_length": "short"
+  },
+  {
+    "question": "In the Health and Retirement Study, how did a diagnosis of hypertension affect a person's subjective life expectancy?",
+    "answer": "A diagnosis of hypertension is associated with lower subjective life expectancy (SLE), regardless of the person's measured blood pressure.",
+    "query_length": "long"
+  },
+  {
+    "question": "What percentage of older adults with high measured BP in the Health and Retirement Study had never been diagnosed with hypertension?",
+    "answer": "About 1 in 10 older adults (10.7%) with high measured blood pressure have never been diagnosed with hypertension.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the modelling study for Sri Lanka, what was the estimated cost per person newly diagnosed with a chronic condition in the public sector for the one-year program?",
+    "answer": "The one-year program would have a cost per person newly diagnosed of USD 6.82 (95% CI: 6.61, 7.03) in the public sector.",
+    "query_length": "long"
+  },
+  {
+    "question": "How would the distribution of new diagnoses from opportunistic screening be spread across socioeconomic groups in Sri Lanka?",
+    "answer": "New diagnoses would be evenly distributed over the socioeconomic distribution, with public clinics diagnosing a higher proportion of poorer individuals and private clinics diagnosing a higher proportion of richer individuals.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the definition of an 'undiagnosed' participant in the Sri Lanka Health and Ageing Study?",
+    "answer": "A participant was defined as ‘undiagnosed’ if they fulfilled any criterion for ‘has condition’ but did not satisfy any criterion for ‘already diagnosed’.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the prevalence of resistant hypertension in the treated Nigerian hypertensive population study?",
+    "answer": "The prevalence of resistant hypertension was 15.5%.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What is the definition of resistant hypertension (RH) used in the Nigerian study?",
+    "answer": "Resistant hypertension was defined as blood pressure ≥140/90 mmHg despite the use of ≥3 guideline-recommended antihypertensive medications including a diuretic, renin-angiotensin system blocker and calcium-channel blocker at optimal or best-tolerated doses, or blood pressure <140/90 mmHg on ≥4 antihypertensive medications.",
+    "query_length": "long"
+  },
+  {
+    "question": "Which cardiovascular comorbidities were patients with resistant hypertension more likely to have?",
+    "answer": "Patients with resistant hypertension were more likely to have heart failure with preserved ejection fraction (HFpEF), cerebrovascular disease, and chronic kidney disease.",
+    "query_length": "mid"
+  },
+  {
+    "question": "A decade after delivery, which hypertension phenotypes were associated with hypertensive disorders in pregnancy (HDP)?",
+    "answer": "Hypertensive disorders in pregnancy were associated with sustained hypertension (odds ratio [OR] 5.54) and white coat hypertension (OR 4.20), but not masked hypertension.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the most common hypertension phenotype found in women 8-10 years after pregnancy?",
+    "answer": "Sustained hypertension was the most common phenotype at 17.8%, followed by masked and white coat hypertension, both at 10.3%.",
+    "query_length": "mid"
+  },
+  {
+    "question": "How was neighborhood deprivation measured in the study on pregnancy-related hypertension?",
+    "answer": "Neighborhood deprivation was measured using the 2018 CDC Social Vulnerability Index.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What was the primary outcome of the retrospective cohort study on thiazide diuretics?",
+    "answer": "The main outcome was the occurrence of syncope episodes or falls.",
+    "query_length": "mid"
+  },
+  {
+    "question": "How did the prevalence of falls/syncope events compare between the thiazide group and the non-thiazide group in the retrospective study?",
+    "answer": "The prevalence of falls/syncope events was significantly higher in the thiazide group (32.2%) compared to the non-thiazide group (19.5%), with a P value of 0.002.",
+    "query_length": "long"
+  },
+  {
+    "question": "What electrolyte disturbances were more prevalent in the group taking thiazides?",
+    "answer": "The group taking thiazides had a higher prevalence of hyponatremia, hypokalaemia, hypercalcemia, and metabolic alkalosis.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the randomized study, how did melatonin supplementation affect arterial stiffness?",
+    "answer": "Arterial stiffness improved significantly (p=0.022) in patients supplemented with melatonin.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What was the daily dosage of melatonin administered in the study on oxidative stress?",
+    "answer": "The daily dosage was 1 mg/day for 1 year.",
+    "query_length": "short"
+  },
+  {
+    "question": "What is the definition of essential hypertension (EH) provided in the text?",
+    "answer": "Essential hypertension (EH) is a complex multifactorial haemodynamic and structural disorder characterized by an overall increased systolic blood pressure (SBP) of ≥140 mmHg and/or diastolic blood pressure (DBP) of ≥90 mmHg.",
+    "query_length": "long"
+  },
+  {
+    "question": "In Dahl salt-sensitive rats, what was the effect of switching from a high-salt to a low-salt diet on the vasoconstriction of mesenteric small arteries (MSAs) to norepinephrine?",
+    "answer": "Switching from a high-salt diet to a low-salt diet (i.e., salt restriction) attenuated the vasoconstriction of the mesenteric small arteries (MSAs) to norepinephrine.",
+    "query_length": "long"
+  },
+  {
+    "question": "How did ACE inhibitor treatment affect vasodilatation in the MSAs of Dahl-SS rats?",
+    "answer": "ACE inhibitor treatment improved the vasodilatation of mesenteric small arteries more obviously.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What was the effect of a high-salt diet on the expression of local ACE, AT1R, and eNOS in the mesenteric small arteries of Dahl salt-sensitive rats?",
+    "answer": "Pathologically, a high-salt diet induced changes in the local expression of angiotensin-converting enzyme (ACE), angiotensin II type 1 receptor (AT1R), and endothelial nitric oxide synthase (eNOS).",
+    "query_length": "long"
+  },
+  {
+    "question": "In the outpatient study of hypertensive patients with COVID-19, were ACE inhibitors or ARBs associated with the risk of hospitalization?",
+    "answer": "In the outpatient study, neither ACE inhibitors (hazard ratio [HR], 0.77; 95% CI, 0.53–1.13, P=0.18) nor ARBs (HR, 0.88; 95% CI, 0.61–1.26, P=0.48) were associated with hospitalization risk.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the primary outcome in the inpatient study of COVID-19 patients?",
+    "answer": "In the inpatient study, the primary outcome was in-hospital mortality.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Did the study find that ACE inhibitors or ARBs should be discontinued in hypertensive patients at risk of COVID-19?",
+    "answer": "The study findings do not support a change to the current use of angiotensin-converting enzyme inhibitors and angiotensin receptor blockers among patients with hypertension being managed in the outpatient setting and at risk of infection with SARS-CoV-2.",
+    "query_length": "long"
+  },
+  {
+    "question": "What are Accessory Renal Arteries (ARAs)?",
+    "answer": "Accessory renal arteries (ARAs), also known as multiple or additional renal arteries, are a common anatomic variation of renal vessels.",
+    "query_length": "short"
+  },
+  {
+    "question": "In the case-control study, how did the 24-hour blood pressure of patients with ARAs compare to those without?",
+    "answer": "The 24-hour blood pressure (4.33/2.43 mm Hg higher) of patients in the ARA group was significantly higher than those of the control group (P<0.05).",
+    "query_length": "mid"
+  },
+  {
+    "question": "What mechanism might explain how ARAs contribute to higher blood pressure in patients with essential hypertension?",
+    "answer": "The mechanism might be related to overactivation of the renin-angiotensin-aldosterone system and the sympathetic nervous system.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the effect of hypertension on resting metabolic rate (RMR) in obese and overweight patients?",
+    "answer": "Hypertension in obese and overweight patients is associated with an elevated resting metabolic rate (RMR).",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the study on RMR, how did the RMR normalized to lean body mass (LBM) compare between untreated and ACEI/ARB-treated hypertensive women?",
+    "answer": "The resting metabolic rate (RMR) normalized to the lean body mass (LBM) was 15% higher in the untreated than ACEI/ARB-treated hypertensive women (p = .003).",
+    "query_length": "long"
+  },
+  {
+    "question": "What three factors explained 78% of the variability in RMR in the multiple regression analysis?",
+    "answer": "Lean body mass, age, and the double product (heart rate x systolic blood pressure) explained 78% of the variability in RMR.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What are Neutrophil Extracellular Traps (NETs)?",
+    "answer": "NETs are complexes of intermixed nuclear and cytoplasmic neutrophil contents, including decondensed chromatin DNA, histones, and granule proteins, that are released into the extracellular space.",
+    "query_length": "short"
+  },
+  {
+    "question": "What is the process of NET formation called?",
+    "answer": "The process involving the formation of neutrophil extracellular traps (NETs) is called NETosis.",
+    "query_length": "short"
+  },
+  {
+    "question": "How do NETs promote vascular smooth muscle cell (VSMC) proliferation, contributing to hypertension?",
+    "answer": "NETs promote vascular smooth muscle cell proliferation due to an increase in G1/S transition, which is promoted by thymidine kinase 1 (TK1) through the regulation of the PI3K/Akt/CDKN1b signaling axis.",
+    "query_length": "long"
+  },
+  {
+    "question": "How did LV and RV mass compare between African ancestry (Afr-a) and European ancestry (Eu-a) hypertensives in the CMR study?",
+    "answer": "Left ventricular (LV) and right ventricular (RV) mass, indexed to body-surface-area, were significantly greater in African ancestry hypertensives than in European ancestry hypertensives (67.1 ± 21.7 vs. 58.3 ± 16.7 g/m2 and 12.6 ± 3.48 vs. 10.7 ± 2.71 g/m2, respectively).",
+    "query_length": "long"
+  },
+  {
+    "question": "What myocardial tissue abnormalities were more prevalent in African ancestry hypertensives?",
+    "answer": "Prolonged T2 relaxation time and a higher prevalence and extent of myocardial fibrosis (MF) were observed in African ancestry patients.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What is the definition of ethnicity provided in the study on cardiac remodelling?",
+    "answer": "Ethnicity is defined as ‘cultural factors such as language, religion, cuisine, ancestry, and nationality that specific communities share. Ethnicity is also considered a social construct that individuals may change as their community and personal dynamics change’.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is considered a candidate for the most common cause of secondary hypertension?",
+    "answer": "Primary aldosteronism is commonly considered a leading candidate for the most common cause of secondary hypertension.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Why is timely diagnosis of primary aldosteronism important for patient outcomes?",
+    "answer": "Timely diagnosis allows for targeted medical and/or surgical management, which can help patients achieve blood pressure goals, reduce risk for cardiovascular events, reduce left ventricular mass, improve hypokalemia, improve kidney function, and reduce risk for all-cause mortality.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the recommendation for primary aldosteronism screening in a patient with new or untreated hypertension?",
+    "answer": "If a patient presents with new or untreated hypertension, screening for primary aldosteronism should be considered before starting antihypertensive agents that could affect the renin–angiotensin–aldosterone system.",
+    "query_length": "long"
+  },
+  {
+    "question": "In the 2014 Ghana Demographic and Health Survey, what was the prevalence of hypertension according to the 2017 ACC/AHA guideline?",
+    "answer": "Overall, 30.43% (n = 3698) of respondents had hypertension as per the 2017 ACC/AHA guideline.",
+    "query_length": "long"
+  },
+  {
+    "question": "According to the JNC7 guideline, what was the prevalence of hypertension in the 2014 Ghana survey?",
+    "answer": "According to the JNC7 guideline, 11.48% (n = 1395) of respondents had hypertension.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Which factors were significantly associated with hypertension according to both the 2017 ACC/AHA and JNC7 guidelines in Ghana?",
+    "answer": "Significant factors according to both guidelines included older age groups (25-34, 35-44, 45-54, 55-64 years), being male, and being an urban resident.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the definition of a 'reclassified hypertensive' individual according to the AHA/ACC-2017 guideline in the ASPREE study?",
+    "answer": "A 'reclassified hypertensive' is an individual who was normotensive by pre-2017 guidelines but hypertensive by the AHA/ACC-2017 guideline, having a blood pressure of 130–139 mmHg systolic and/or 80–89 mmHg diastolic and not receiving any antihypertensive medication.",
+    "query_length": "long"
+  },
+  {
+    "question": "In the ASPREE study, what percentage of participants were 'reclassified hypertensive' by the AHA/ACC-2017 guideline?",
+    "answer": "An additional 12.3% (2354 out of 19,114) of participants were ‘reclassified hypertensive’ by the AHA/ACC-2017 guideline.",
+    "query_length": "mid"
+  },
+  {
+    "question": "How did the observed CVD event rates compare between 'reclassified hypertensive' and 'pre-2017 hypertensive' groups in the ASPREE study?",
+    "answer": "A lower cardiovascular disease (CVD) rate of 8.9 per 1000 person-years was observed in the ‘reclassified hypertensive’ group compared with 12.1 per 1000 person-years in the ‘pre-2017 hypertensive’ group (P=0.01).",
+    "query_length": "long"
+  },
+  {
+    "question": "In patients with masked hypertension diagnosed by home blood pressure monitoring, how did indexed LV mass and relative wall thickness compare to normotensives?",
+    "answer": "In subjects with masked hypertension diagnosed by home blood pressure monitoring (HBPM), indexed left ventricular (LV) mass and relative wall thickness were generally intermediate between values observed in normotensives and sustained hypertensives, and were significantly greater in masked hypertension than in normotensives.",
+    "query_length": "long"
+  },
+  {
+    "question": "Which method, HBPM or ABPM, was suggested to be superior in identifying patients with masked hypertension who have early LV remodeling and diastolic LV dysfunction?",
+    "answer": "The results suggest that home blood pressure monitoring (HBPM) may be superior to ambulatory blood pressure monitoring (ABPM) in identifying patients with masked hypertension who have early LV remodeling and diastolic LV dysfunction.",
+    "query_length": "long"
+  },
+  {
+    "question": "In the pediatric study, what percentage of patients with initial white coat hypertension progressed to an abnormal ABPM phenotype on follow-up?",
+    "answer": "On follow-up ambulatory blood pressure monitoring (ABPM), 61% of patients progressed to an abnormal ABPM phenotype, which included 23% progressing to ambulatory hypertension and 38% to ambulatory prehypertension.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the difference between 'stable white coat hypertension' and 'intermittent white coat hypertension' as defined in the pediatric study?",
+    "answer": "'Stable white coat hypertension' was defined as those patients with hypertensive blood pressure in the pediatric nephrology clinic, while 'intermittent white coat hypertension' was defined as those with normal blood pressure in the clinic.",
+    "query_length": "long"
+  },
+  {
+    "question": "What was the median interval time between ABPM measurements in the pediatric white coat hypertension study?",
+    "answer": "The median interval time between ambulatory blood pressure monitoring (ABPM) measurements was 14 months.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Is screening for primary aldosteronism in the hypertensive obstructive sleep apnea population cost-saving?",
+    "answer": "Yes, for patients with hypertension and obstructive sleep apnea, rigorous screening for primary aldosteronism is cost-saving due to the cardiovascular risk that is averted.",
+    "query_length": "short"
+  },
+  {
+    "question": "What is the estimated prevalence of primary aldosteronism in patients with resistant hypertension?",
+    "answer": "Primary aldosteronism is now recognized to represent 12% to 22% of resistant hypertension cases.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Why does primary aldosteronism carry a higher risk profile than essential hypertension?",
+    "answer": "Primary aldosteronism (PA) bears a risk profile that is substantially higher than that of essential hypertension because hyperaldosteronism provokes vascular and cardiac fibrosis, and the resulting increased complication rates are independent of blood pressure levels.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is minoxidil?",
+    "answer": "Minoxidil, also known as Loniten, is a potent antihypertensive drug that works by dilating pre-capillary arterioles.",
+    "query_length": "short"
+  },
+  {
+    "question": "What are the four physiologic mechanisms that contribute to edema from minoxidil?",
+    "answer": "The four mechanisms are: 1. Capillary Leakage due to arteriolar dilation, 2. Reduced Glomerular Filtration Pressure due to blood pressure lowering, 3. Renal Nerve Released Norepinephrine causing sodium retention, and 4. Beta adrenoceptor mediated renin release leading to aldosterone production.",
+    "query_length": "long"
+  },
+  {
+    "question": "What is the real Minimum Daily Requirement (MDR) for sodium according to the text?",
+    "answer": "The real Minimum Daily Requirement (MDR) for sodium is less than 0.2 grams per day.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In uncontrolled hypertensive patients, what was the effect of oral magnesium therapy on blood pressure?",
+    "answer": "In uncontrolled hypertensive patients, all magnesium doses studied (ranging from 240–607 mg/day) showed a significant decrease in both systolic and diastolic blood pressure.",
+    "query_length": "mid"
+  },
+  {
+    "question": "What daily dose of magnesium was required to lower blood pressure in untreated hypertensive patients?",
+    "answer": "A magnesium dose of greater than 600 mg/day was required to safely lower blood pressure in untreated hypertensive patients.",
+    "query_length": "mid"
+  },
+  {
+    "question": "Do normotensive subjects show a BP-lowering effect with oral magnesium therapy?",
+    "answer": "No, normotensive subjects do not show a blood pressure-lowering effect with oral magnesium therapy.",
+    "query_length": "short"
+  },
+  {
+    "question": "How did ACE inhibitors and ARBs compare in their effect on the glucose infusion rate (GIR) in hypertensive patients?",
+    "answer": "The efficacy of ACE inhibitors on improving the glucose infusion rate (GIR) was significantly better than that of ARBs (WMD = -1.09, 95% CI: -1.34 to -0.85, P < 0.001).",
+    "query_length": "mid"
+  },
+  {
+    "question": "In the subgroup of hypertensive patients with diabetes mellitus, how did ACE inhibitors and ARBs compare in their effect on HOMA-IR?",
+    "answer": "In the hypertensive patients with diabetes mellitus subgroup, ACE inhibitors showed a more effective improvement on HOMA-IR compared to ARBs (WMD = 0.55, 95% CI: 0.49 to 0.61, P < 0.001).",
+    "query_length": "long"
+  },
+  {
+    "question": "What is HOMA-IR?",
+    "answer": "HOMA-IR stands for homeostasis model assessment of insulin resistance.",
+    "query_length": "short"
+  },
+  {
+    "question": "Was hypertension associated with a higher risk of severe COVID-19 in the UK Biobank study?",
+    "answer": "Yes, hypertension was associated with 22% higher odds of severe COVID-19 (Odds ratio (OR) 1.22; 95% confidence interval (CI) 1.12, 1.33) compared with normotension after adjusting for confounding variables.",
+    "query_length": "mid"
+  },
+  {
+    "question": "In treated hypertensive individuals, what was the relationship between systolic blood pressure (SBP) and the risk of severe COVID-19?",
+    "answer": "There was a J-shaped relationship; elevated SBP showed a dose-response relationship with severe COVID-19 (e.g., SBP 150-159mmHg had an OR of 1.91), and SBP <120mmHg was also associated with greater odds of severe COVID-19 (OR 1.40).",
+    "query_length": "long"
+  }
+]

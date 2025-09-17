@@ -1,0 +1,802 @@
+[
+  {
+    "query": "What is the definition of the White Coat Phenomenon (WCP)?",
+    "expected_answer": "WCP is the phenomenon where the BP in an office setting is higher than current guidelines recommend (thus in the \u2018hypertensive\u2019 range), whether or not a person is on BP medication, while the out-of-office BP (in the same person) is below current guideline recommendation for out-of-office BP goals.",
+    "generated_answer": "The White Coat Phenomenon (WCP) is not explicitly defined in the provided KNOWLEDGE BASE. However, it is mentioned as one of the four terms used in this report, along with White Coat Effect (WCE), White Coat Hypertension (WCH), and White Coat UnControlled Hypertension (WUCH) [Source: 11906_2024_Article_1309.pdf].",
+    "retrieval_time_seconds": 0.11982269998406991,
+    "generation_time_seconds": 4.419112100003986,
+    "total_time_seconds": 4.552754100004677
+  },
+  {
+    "query": "What are the five most predictive variables for White Coat Effect (WCE) found by a machine learning algorithm study?",
+    "expected_answer": "The five most predictive variables, rank ordered, were office diastolic pressure, followed by office systolic pressure, kidney function (estimated glomerular filtration rate), blood glucose concentration and current smoking.",
+    "generated_answer": "The five most predictive variables for White Coat Effect (WCE) found by a machine learning algorithm study are:\n\n1. Office diastolic pressure\n2. Office systolic pressure\n3. Kidney function (estimated glomerular filtration rate)\n4. Blood glucose concentration\n5. Current smoking\n\nThese variables were derived from a study that used a Random Forest matrix plot as the best approach to predict the likelihood of WCE, and were found to be the most predictive variables, rank ordered [Source: 11906_2024_Article_1309.pdf].",
+    "retrieval_time_seconds": 0.01030460000038147,
+    "generation_time_seconds": 4.980398799991235,
+    "total_time_seconds": 4.998817400017288
+  },
+  {
+    "query": "Is White Coat Uncontrolled Hypertension (WUCH) associated with any increased cardiovascular risk?",
+    "expected_answer": "Meta-analytic data suggest that WUCH is not associated with any elevated risk.",
+    "generated_answer": "White coat hypertension is relatively common, carries a small but definite increase in cardiovascular risk, and is prone to conversion to sustained hypertension [Source: 11906_2024_Article_1309.pdf]. Meta-analyses of studies conducted in adults have demonstrated that white coat hypertension conveys a cardiovascular risk that is intermediate between normotension and sustained hypertension [Source: nihms-1820707.pdf]. Adults with white coat hypertension have slightly higher rates of cardiovascular morbidity and mortality, higher left ventricular mass index, and greater common carotid artery intimal-media thickness [Source: nihms-1820707.pdf].",
+    "retrieval_time_seconds": 0.01104840001789853,
+    "generation_time_seconds": 5.592363700008718,
+    "total_time_seconds": 5.611664399999427
+  },
+  {
+    "query": "What was the prevalence of Left Ventricular Diastolic Dysfunction (LVDD) at baseline in the community hypertension cohort study?",
+    "expected_answer": "At baseline, 35 of the 283 hypertensions were diagnosed with LVDD, which corresponds to a prevalence of 12.3%.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010602499998640269,
+    "generation_time_seconds": 1.139263299992308,
+    "total_time_seconds": 1.1575200000079349
+  },
+  {
+    "query": "How did the frequency of LVDD differ between men and women in the study?",
+    "expected_answer": "Women had a higher frequency of LVDD (15.5%) than men (8%).",
+    "generated_answer": "The study demonstrated that women had increased LAVI compared with men, suggesting that women had more frequent LVDD [Source: 12872_2022_Article_2709.pdf].",
+    "retrieval_time_seconds": 0.010903900023549795,
+    "generation_time_seconds": 2.0841430999862496,
+    "total_time_seconds": 2.102347700012615
+  },
+  {
+    "query": "What is LVDD a forerunner of?",
+    "expected_answer": "LVDD is demonstrated to be a forerunner of heart failure, especially those heart failure with preserved ejection fraction (HFpEF).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010473900008946657,
+    "generation_time_seconds": 0.9567652000114322,
+    "total_time_seconds": 0.9740163999958895
+  },
+  {
+    "query": "What was the prevalence of LVH among the young hypertensive group when measured by 2D-transthoracic echocardiography?",
+    "expected_answer": "The prevalence of LVH among the hypertensive group was 20.9% using 2D-transthoracic echocardiography.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010305800009518862,
+    "generation_time_seconds": 1.0802792999893427,
+    "total_time_seconds": 1.098486500006402
+  },
+  {
+    "query": "What was the relationship found between total mTOR and ANG-II in the study of young hypertensives?",
+    "expected_answer": "The total mTOR moderately correlated positively with ANG-II.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01014020000002347,
+    "generation_time_seconds": 0.8908072999911383,
+    "total_time_seconds": 0.9071999000152573
+  },
+  {
+    "query": "Which biochemical parameters were significantly higher in hypertensives with LVH compared to those without LVH and normotensives?",
+    "expected_answer": "Hypertensives with LVH had significantly higher serum levels of TG, TG/HDL, TC/HDL, chemerin, troponin T, Galectin-3 and total mTOR compared to normotensive and hypertensives without LVH.",
+    "generated_answer": "According to the provided KNOWLEDGE BASE, the biochemical parameters that were significantly higher in hypertensives with LVH compared to those without LVH and normotensives were:\n\n* Indexed LV mass [Source: nihms-1766793.pdf]\n* Relative wall thickness [Source: nihms-1766793.pdf]\n* E/e' (indices of LV relaxation) [Source: nihms-1766793.pdf]\n\nThese parameters were generally intermediate between values observed in normotensives and sustained hypertensives, and were significantly greater in MH than normotensives.",
+    "retrieval_time_seconds": 0.010678200022084638,
+    "generation_time_seconds": 5.579331200016895,
+    "total_time_seconds": 5.5989512000232935
+  },
+  {
+    "query": "What is the proposed mechanism by which HMG-CoA reductase inhibitor improves vascular endothelial function impairment in elderly essential hypertension?",
+    "expected_answer": "HMG-CoA reductase inhibitor improves elderly essential hypertension-induced vascular endothelial function impairment by blocking the JAK/STAT pathway.",
+    "generated_answer": "HMG-CoA reductase inhibitors may improve endothelial dysfunction of essential hypertension in the elderly by blocking the JAK/STAT pathway [Source: 13000_2023_Article_1393.pdf]. Specifically, they improve endothelial function via elevating endothelial NO production and post-transcriptional eNOS, reducing cholesterol and ET-1, as well as diminishing the affinity for angiotensin-I receptors [Source: 13000_2023_Article_1393.pdf].",
+    "retrieval_time_seconds": 0.011058200005209073,
+    "generation_time_seconds": 4.693938100012019,
+    "total_time_seconds": 4.713525999977719
+  },
+  {
+    "query": "In the clinical trial on HMG-CoA reductase inhibitors, what two drugs were given to the observation group?",
+    "expected_answer": "The observation group received oral Amlodipine Besylate Tablets plus the HMG-CoA reductase inhibitor atorvastatin calcium.",
+    "generated_answer": "According to the knowledge base, in the clinical trial on HMG-CoA reductase inhibitors, the observation group received a combination of antihypertensive treatment and a hypocholesterolemic diet [Source: 13000_2023_Article_1393.pdf].",
+    "retrieval_time_seconds": 0.012544199998956174,
+    "generation_time_seconds": 2.9654760000121314,
+    "total_time_seconds": 2.9862803999858443
+  },
+  {
+    "query": "How did atorvastatin calcium and AG490 affect the expression levels of p-JAK2/JAK2 and p-STAT3/STAT3 in modeled rats?",
+    "expected_answer": "Both the HMG-CoA reductase inhibitor (atorvastatin calcium) and AG490 (a JAK/STAT pathway inhibitor) decreased p-JAK2/JAK2 and p-STAT3/STAT3 expression levels.",
+    "generated_answer": "Atorvastatin calcium and AG490 decreased the expression levels of p-JAK2/JAK2 and p-STAT3/STAT3 in SHR rats [Source: 13000_2023_Article_1393.pdf].",
+    "retrieval_time_seconds": 0.01360119998571463,
+    "generation_time_seconds": 2.8088286999845877,
+    "total_time_seconds": 2.8315025999909267
+  },
+  {
+    "query": "What is barnidipine?",
+    "expected_answer": "Barnidipine is a long-acting dihydropyridinic calcium channel blocker (CCB).",
+    "generated_answer": "Barnidipine is a dihydropyridinic agent, a type of calcium channel blocker (CCB), which shows potent antihypertensive action [Source: 40292_2017_Article_242.pdf]. It has a modified-release, single-isomer formulation that provides a slow onset of action combined with sustained delivery of the drug to effectively control blood pressure throughout a 24-h period without causing hypotension or reflex tachycardia [Source: 40292_2017_Article_242.pdf].",
+    "retrieval_time_seconds": 0.010618400003295392,
+    "generation_time_seconds": 4.898949100024765,
+    "total_time_seconds": 4.916940199997043
+  },
+  {
+    "query": "In the BASIC-HT study, what was the main reason for patients switching from other CCBs like amlodipine or lercanidipine to barnidipine-based therapy?",
+    "expected_answer": "The main reason for switching to barnidipine-based therapy was mainly due to safety (42%), lack of efficacy (28%), or both (11%).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01166899999952875,
+    "generation_time_seconds": 1.3342462999862619,
+    "total_time_seconds": 1.3540229999925941
+  },
+  {
+    "query": "How did the combination of barnidipine plus losartan affect left ventricular mass index compared to lercanidipine plus losartan in hypertensive patients with diabetes?",
+    "expected_answer": "A significant reduction in left ventricular mass index was identified in patients who received barnidipine plus losartan compared with lercanidipine plus losartan (p<0.05).",
+    "generated_answer": "The combination of barnidipine plus losartan significantly reduced left ventricular mass index compared to lercanidipine plus losartan in hypertensive patients with diabetes [Source: 40292_2017_Article_242.pdf].",
+    "retrieval_time_seconds": 0.011872700008098036,
+    "generation_time_seconds": 3.0194085000257473,
+    "total_time_seconds": 3.0400008000142407
+  },
+  {
+    "query": "What is masked hypertension (MHT)?",
+    "expected_answer": "Masked hypertension (MHT) is defined as having normal blood pressure in the office but high blood pressure outside the office (office normotension and home hypertension).",
+    "generated_answer": "Masked hypertension (MHT) is a unique group of young women who are undetected in routine clinical settings and are at increased risk of future cardiovascular events and end/target organ damage [Source: hpad090.pdf]. They are characterized by having normal office blood pressures, but elevated home blood pressures, and are unlikely to receive treatment, partly explaining the associated poor cardiovascular outcomes [Source: hpad090.pdf].",
+    "retrieval_time_seconds": 0.01089119998505339,
+    "generation_time_seconds": 3.6059698999742977,
+    "total_time_seconds": 3.6233565000002272
+  },
+  {
+    "query": "In the TMM CommCohort Study, what was the multivariate odds ratio for masked hypertension in male participants with depressive symptoms?",
+    "expected_answer": "The multivariate odds ratio for masked hypertension in the patients with depressive symptoms was 1.72 (95% confidence interval: 1.26\u20132.34) in male participants.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01027940001222305,
+    "generation_time_seconds": 0.9762409999966621,
+    "total_time_seconds": 0.9932193999993615
+  },
+  {
+    "query": "How were depressive symptoms assessed in the study on masked hypertension?",
+    "expected_answer": "Depressive symptoms were assessed using the Center for Epidemiologic Studies Depression Scale (CES-D), Japanese version.",
+    "generated_answer": "Depressive symptoms were not assessed in the study on masked hypertension.",
+    "retrieval_time_seconds": 0.010421500017400831,
+    "generation_time_seconds": 1.012236499984283,
+    "total_time_seconds": 1.0295108999998774
+  },
+  {
+    "query": "According to the 2017\u20132018 Bangladesh Demographic and Health Survey, what was the prevalence of hypertension based on the JNC 7 guideline?",
+    "expected_answer": "The prevalence of hypertension was 24.0% according to the JNC 7 guideline.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01078609999967739,
+    "generation_time_seconds": 1.1320330000016838,
+    "total_time_seconds": 1.1503739000181668
+  },
+  {
+    "query": "What was the prevalence of hypertension in Bangladesh when using the 2017 ACC/AHA guideline?",
+    "expected_answer": "The prevalence of hypertension was 50.5% according to the 2017 ACC/AHA guideline.",
+    "generated_answer": "According to the study, the prevalence of hypertension in Bangladesh was almost doubled when using the 2017 ACC/AHA guideline compared to the JNC 7 guideline [Source: 41598_2021_Article_94947.pdf]. Specifically, it was found that half of the adult population in Bangladesh is hypertensive when measured according to the new guideline [Source: 41598_2021_Article_94947.pdf].",
+    "retrieval_time_seconds": 0.011540500010596588,
+    "generation_time_seconds": 4.058038099989062,
+    "total_time_seconds": 4.077317500021309
+  },
+  {
+    "query": "Which administrative divisions in Bangladesh had higher prevalence ratios for hypertension according to both JNC 7 and ACC/AHA guidelines?",
+    "expected_answer": "Participants from Rangpur and Rajshahi divisions had higher prevalence ratios for being hypertensive according to both guidelines.",
+    "generated_answer": "According to the study, people from Rangpur and Rajshahi divisions found higher odds of being hypertensive in both the JNC 7 and 2017 ACC/AHA guidelines [Source: 41598_2021_Article_94947.pdf].",
+    "retrieval_time_seconds": 0.010344099981011823,
+    "generation_time_seconds": 2.7510907000105362,
+    "total_time_seconds": 2.768963699985761
+  },
+  {
+    "query": "What are microRNAs?",
+    "expected_answer": "MicroRNAs are small non-coding RNAs that regulate gene and protein expression at the post-transcriptional level.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01069580001058057,
+    "generation_time_seconds": 0.9890974999871105,
+    "total_time_seconds": 1.0063575999811292
+  },
+  {
+    "query": "Which specific microRNA was identified as being involved in regulating the RAAS, SNS, and LVH processes in systemic arterial hypertension?",
+    "expected_answer": "MiR-133a was observed to regulate all three processes: the renin\u2013angiotensin\u2013aldosterone system (RAAS), sympathetic nervous system (SNS), and left ventricular hypertrophy (LVH).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010637700004735962,
+    "generation_time_seconds": 1.0974894000100903,
+    "total_time_seconds": 1.116232200001832
+  },
+  {
+    "query": "In Ang-II-stimulated human umbilical vein endothelial cells (HUVECs), how was miR-133a expression affected and what was the consequence?",
+    "expected_answer": "In Ang-II-stimulated HUVECs, miR-133a was down regulated, which increased prorenin receptor (PRR) expression and exacerbated the signaling pathway of the RAAS, promoting apoptosis.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010452100017573684,
+    "generation_time_seconds": 1.3194415000034496,
+    "total_time_seconds": 1.3377812999824528
+  },
+  {
+    "query": "Define isolated systolic hypertension (ISH).",
+    "expected_answer": "Isolated systolic hypertension (ISH) is defined as having a systolic blood pressure (SBP) of \u2265 140 mmHg but a diastolic blood pressure (DBP) of < 90 mmHg.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010209500003838912,
+    "generation_time_seconds": 1.1443184000090696,
+    "total_time_seconds": 1.1616297000146005
+  },
+  {
+    "query": "In the UK Biobank study, how did participants with ISH taking BP medications compare to normotensives in terms of white matter hyperintensity (WMH) volume?",
+    "expected_answer": "Compared with normotensives, those with ISH and taking BP medications have larger white matter hyperintensity (WMH) volumes (\u03b2=.24 [95% CI 0.20\u20130.28]).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010308299999451265,
+    "generation_time_seconds": 1.1012647000025027,
+    "total_time_seconds": 1.1189127000106964
+  },
+  {
+    "query": "What is isolated diastolic hypertension (IDH)?",
+    "expected_answer": "Isolated diastolic hypertension (IDH) is defined as having a diastolic blood pressure (DBP) of \u2265 90 mmHg but a systolic blood pressure (SBP) of < 140 mmHg.",
+    "generated_answer": "Isolated diastolic hypertension (IDH) is a condition where a patient has elevated diastolic blood pressure, but normal systolic blood pressure [Source: hpad090.pdf].",
+    "retrieval_time_seconds": 0.010202699981164187,
+    "generation_time_seconds": 2.1565305000112858,
+    "total_time_seconds": 2.174213799997233
+  },
+  {
+    "query": "In spontaneously hypertensive rats (SHR), what is the effect of testosterone on the development of hypertension?",
+    "expected_answer": "Testosterone promotes the development of hypertension in male spontaneously hypertensive rats (SHR).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010902000009082258,
+    "generation_time_seconds": 1.1713890999963041,
+    "total_time_seconds": 1.190236399997957
+  },
+  {
+    "query": "How do male and female spontaneously hypertensive rats differ in terms of their renin-angiotensin system (RAS) components?",
+    "expected_answer": "Males have greater expression of classical RAS components (e.g., plasma renin activity, AT1 mRNA expression), whereas females have greater activation of the non-classical RAS (e.g., greater renal and vascular AT2 receptor expression, higher levels of Ang 1-7 in the kidney).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.009917099989252165,
+    "generation_time_seconds": 1.326325000001816,
+    "total_time_seconds": 1.3444626999844331
+  },
+  {
+    "query": "What effect does ovariectomy have on the development of hypertension in female SHR?",
+    "expected_answer": "Ovariectomy at 4 weeks of age had no effect on the development of hypertension in female spontaneously hypertensive rats.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010917300009168684,
+    "generation_time_seconds": 1.1866496999864466,
+    "total_time_seconds": 1.2050035999855027
+  },
+  {
+    "query": "In the comparative P300 study, how did the P300 latencies of hypertensives and normotensives differ?",
+    "expected_answer": "Hypertensives and normotensives differed significantly concerning P300 potentials\u2019 latency, with hypertensives showing longer latencies (p-value: 0.001).",
+    "generated_answer": "The P300 latencies of hypertensives and normotensives differed significantly, with hypertensives showing a longer latency (p-value: 0.001) [Source: cureus-0014-00000028397.pdf]. Specifically, the Fz and Cz P300 latencies were longer in hypertensives compared to normotensives [Source: cureus-0014-00000028397.pdf].",
+    "retrieval_time_seconds": 0.010349999996833503,
+    "generation_time_seconds": 4.217371000006096,
+    "total_time_seconds": 4.2358687999949325
+  },
+  {
+    "query": "What is the P300 event-related potential presumed to reflect?",
+    "expected_answer": "The P300 is presumed to reflect processes related to working memory and contextual updating.",
+    "generated_answer": "The P300 event-related potential is presumed to reflect processes related to working memory and contextual updating, occurring between 250 and 600 msec following stimulus presentation [Source: cureus-0014-00000028397.pdf].",
+    "retrieval_time_seconds": 0.011460800014901906,
+    "generation_time_seconds": 2.5561674000055064,
+    "total_time_seconds": 2.576176200003829
+  },
+  {
+    "query": "Did the Hindi Mini-mental Status Examination (HMSE) and Hindi Montreal Cognitive Assessment (MoCA) scores differ significantly between hypertensive and normotensive groups?",
+    "expected_answer": "No, the HMSE, Hindi MoCA, and choice reaction time (CRT) scores did not differ significantly between the hypertensive and normotensive groups.",
+    "generated_answer": "The Hindi Mini-mental Status Examination (HMSE) and Hindi Montreal Cognitive Assessment (MoCA) scores were dependent on the education status of the patient [Source: cureus-0014-00000028397.pdf].",
+    "retrieval_time_seconds": 0.01167360000545159,
+    "generation_time_seconds": 2.5134439999819733,
+    "total_time_seconds": 2.5327940999995917
+  },
+  {
+    "query": "What is the major difference between the ISH global guidelines and other international hypertension guidelines?",
+    "expected_answer": "The major difference is the stratified recommendations to accommodate differences in available resources between countries and within countries, separating optimal versus essential criteria for diagnosis and treatment.",
+    "generated_answer": "The major difference between the ISH global guidelines and other international hypertension guidelines is the stratified recommendations to accommodate differences in available resources between countries and within countries [Source: CVJA-31-325.pdf].",
+    "retrieval_time_seconds": 0.011304100014967844,
+    "generation_time_seconds": 2.2969733999925666,
+    "total_time_seconds": 2.316422200005036
+  },
+  {
+    "query": "What BP threshold did the 2017 ACC/AHA guidelines set for diagnosing hypertension?",
+    "expected_answer": "The 2017 ACC/AHA guidelines set a lower cut-off point for the diagnosis of hypertension at a blood pressure of \u2265 130/80 mmHg.",
+    "generated_answer": "The 2017 ACC/AHA guidelines set a BP threshold of 130/80 mmHg for diagnosing hypertension [Source: CVJA-31-325.pdf].",
+    "retrieval_time_seconds": 0.01223950000712648,
+    "generation_time_seconds": 2.070125199999893,
+    "total_time_seconds": 2.0905907999840565
+  },
+  {
+    "query": "What is the PASCAR recommendation for treating patients with stage 1 hypertension who have not responded to lifestyle modifications?",
+    "expected_answer": "PASCAR recommends treating all patients diagnosed with hypertension, including those with stage 1 hypertension who have not responded to lifestyle modifications.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011179100023582578,
+    "generation_time_seconds": 1.1946746000030544,
+    "total_time_seconds": 1.2140057000215165
+  },
+  {
+    "query": "What is subjective life expectancy (SLE)?",
+    "expected_answer": "Subjective life expectancy (SLE) is the perceived probability of surviving to a target age.",
+    "generated_answer": "Subjective life expectancy (SLE) is a continuous variable that represents an individual's perception of their own survival chances, with responses ranging from 0 to 100 [Source: gbab022.pdf].",
+    "retrieval_time_seconds": 0.011968000006163493,
+    "generation_time_seconds": 2.192637200001627,
+    "total_time_seconds": 2.21212640000158
+  },
+  {
+    "query": "In the Health and Retirement Study, how did a diagnosis of hypertension affect a person's subjective life expectancy?",
+    "expected_answer": "A diagnosis of hypertension is associated with lower subjective life expectancy (SLE), regardless of the person's measured blood pressure.",
+    "generated_answer": "A diagnosis of hypertension is associated with lower subjective life expectancy (SLE), regardless of measured blood pressure [Source: gbab022.pdf].",
+    "retrieval_time_seconds": 0.01618380000581965,
+    "generation_time_seconds": 1.8300149999849964,
+    "total_time_seconds": 1.8541880000266246
+  },
+  {
+    "query": "What percentage of older adults with high measured BP in the Health and Retirement Study had never been diagnosed with hypertension?",
+    "expected_answer": "About 1 in 10 older adults (10.7%) with high measured blood pressure have never been diagnosed with hypertension.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011238699982641265,
+    "generation_time_seconds": 1.192665799986571,
+    "total_time_seconds": 1.2117703999974765
+  },
+  {
+    "query": "In the modelling study for Sri Lanka, what was the estimated cost per person newly diagnosed with a chronic condition in the public sector for the one-year program?",
+    "expected_answer": "The one-year program would have a cost per person newly diagnosed of USD 6.82 (95% CI: 6.61, 7.03) in the public sector.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010286600008839741,
+    "generation_time_seconds": 1.1929365000105463,
+    "total_time_seconds": 1.2108133000147063
+  },
+  {
+    "query": "How would the distribution of new diagnoses from opportunistic screening be spread across socioeconomic groups in Sri Lanka?",
+    "expected_answer": "New diagnoses would be evenly distributed over the socioeconomic distribution, with public clinics diagnosing a higher proportion of poorer individuals and private clinics diagnosing a higher proportion of richer individuals.",
+    "generated_answer": "The distribution of new diagnoses from opportunistic screening would be slightly pro-rich at private clinics and slightly pro-poor at public clinics in Sri Lanka [Source: gh-17-1-1174.pdf].",
+    "retrieval_time_seconds": 0.011105199984740466,
+    "generation_time_seconds": 2.3018377000116743,
+    "total_time_seconds": 2.320389600005001
+  },
+  {
+    "query": "What is the definition of an 'undiagnosed' participant in the Sri Lanka Health and Ageing Study?",
+    "expected_answer": "A participant was defined as \u2018undiagnosed\u2019 if they fulfilled any criterion for \u2018has condition\u2019 but did not satisfy any criterion for \u2018already diagnosed\u2019.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010258299997076392,
+    "generation_time_seconds": 1.2430440000025555,
+    "total_time_seconds": 1.2613646000099834
+  },
+  {
+    "query": "What was the prevalence of resistant hypertension in the treated Nigerian hypertensive population study?",
+    "expected_answer": "The prevalence of resistant hypertension was 15.5%.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01041270000860095,
+    "generation_time_seconds": 1.0760521999909543,
+    "total_time_seconds": 1.0939283999905456
+  },
+  {
+    "query": "What is the definition of resistant hypertension (RH) used in the Nigerian study?",
+    "expected_answer": "Resistant hypertension was defined as blood pressure \u2265140/90 mmHg despite the use of \u22653 guideline-recommended antihypertensive medications including a diuretic, renin-angiotensin system blocker and calcium-channel blocker at optimal or best-tolerated doses, or blood pressure <140/90 mmHg on \u22654 antihypertensive medications.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010810500010848045,
+    "generation_time_seconds": 1.1415756000205874,
+    "total_time_seconds": 1.1596991999831516
+  },
+  {
+    "query": "Which cardiovascular comorbidities were patients with resistant hypertension more likely to have?",
+    "expected_answer": "Patients with resistant hypertension were more likely to have heart failure with preserved ejection fraction (HFpEF), cerebrovascular disease, and chronic kidney disease.",
+    "generated_answer": "Patients with resistant hypertension were more likely to have CV comorbidities, particularly HFrEF and HFmrEF [Source: gh-19-1-1296.pdf].",
+    "retrieval_time_seconds": 0.011186500021722168,
+    "generation_time_seconds": 2.1616494999907445,
+    "total_time_seconds": 2.1804788000008557
+  },
+  {
+    "query": "A decade after delivery, which hypertension phenotypes were associated with hypertensive disorders in pregnancy (HDP)?",
+    "expected_answer": "Hypertensive disorders in pregnancy were associated with sustained hypertension (odds ratio [OR] 5.54) and white coat hypertension (OR 4.20), but not masked hypertension.",
+    "generated_answer": "The study found that nearly 40% of women who experienced hypertension-related factors during pregnancy did not receive treatment, partly explaining the associated poor cardiovascular outcomes [Source: hpad090.pdf]. However, the specific hypertension phenotypes associated with hypertensive disorders in pregnancy (HDP) a decade after delivery are not explicitly mentioned in the provided knowledge base.",
+    "retrieval_time_seconds": 0.013016199984122068,
+    "generation_time_seconds": 3.293752700003097,
+    "total_time_seconds": 3.3146915000106674
+  },
+  {
+    "query": "What was the most common hypertension phenotype found in women 8-10 years after pregnancy?",
+    "expected_answer": "Sustained hypertension was the most common phenotype at 17.8%, followed by masked and white coat hypertension, both at 10.3%.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010432699986267835,
+    "generation_time_seconds": 1.1588235000090208,
+    "total_time_seconds": 1.17762460000813
+  },
+  {
+    "query": "How was neighborhood deprivation measured in the study on pregnancy-related hypertension?",
+    "expected_answer": "Neighborhood deprivation was measured using the 2018 CDC Social Vulnerability Index.",
+    "generated_answer": "Neighborhood-level poverty, decreased walkability, and availability of healthy food were used to measure neighborhood deprivation in the study on pregnancy-related hypertension [Source: hpad090.pdf].",
+    "retrieval_time_seconds": 0.010803399985888973,
+    "generation_time_seconds": 1.9732683000038378,
+    "total_time_seconds": 1.9918946999823675
+  },
+  {
+    "query": "What was the primary outcome of the retrospective cohort study on thiazide diuretics?",
+    "expected_answer": "The main outcome was the occurrence of syncope episodes or falls.",
+    "generated_answer": "The primary outcome of the retrospective cohort study on thiazide diuretics was the association between thiazide use and falls/syncope in hypertension patients [Source: IJMR-161-1-99.pdf].",
+    "retrieval_time_seconds": 0.010488399973837659,
+    "generation_time_seconds": 2.5710155999986455,
+    "total_time_seconds": 2.5898718999815173
+  },
+  {
+    "query": "How did the prevalence of falls/syncope events compare between the thiazide group and the non-thiazide group in the retrospective study?",
+    "expected_answer": "The prevalence of falls/syncope events was significantly higher in the thiazide group (32.2%) compared to the non-thiazide group (19.5%), with a P value of 0.002.",
+    "generated_answer": "The study found that the associations between thiazide use and falls/syncope were demonstrated in the study participants taking thiazide diuretics [Source: IJMR-161-1-99.pdf]. However, the exact prevalence of falls/syncope events was not provided in the knowledge base.",
+    "retrieval_time_seconds": 0.01054770001792349,
+    "generation_time_seconds": 3.2244959000090603,
+    "total_time_seconds": 3.2433038000017405
+  },
+  {
+    "query": "What electrolyte disturbances were more prevalent in the group taking thiazides?",
+    "expected_answer": "The group taking thiazides had a higher prevalence of hyponatremia, hypokalaemia, hypercalcemia, and metabolic alkalosis.",
+    "generated_answer": "Hypokalaemia, metabolic alkalosis, and AKI were more prevalent in the group taking thiazides [Source: IJMR-161-1-99.pdf].",
+    "retrieval_time_seconds": 0.01046019999193959,
+    "generation_time_seconds": 2.2367484999995213,
+    "total_time_seconds": 2.257399299996905
+  },
+  {
+    "query": "In the randomized study, how did melatonin supplementation affect arterial stiffness?",
+    "expected_answer": "Arterial stiffness improved significantly (p=0.022) in patients supplemented with melatonin.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.0120660999964457,
+    "generation_time_seconds": 1.0787453000084497,
+    "total_time_seconds": 1.0978517000039574
+  },
+  {
+    "query": "What was the daily dosage of melatonin administered in the study on oxidative stress?",
+    "expected_answer": "The daily dosage was 1 mg/day for 1 year.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010318299988284707,
+    "generation_time_seconds": 1.3446923999872524,
+    "total_time_seconds": 1.363246299995808
+  },
+  {
+    "query": "What is the definition of essential hypertension (EH) provided in the text?",
+    "expected_answer": "Essential hypertension (EH) is a complex multifactorial haemodynamic and structural disorder characterized by an overall increased systolic blood pressure (SBP) of \u2265140 mmHg and/or diastolic blood pressure (DBP) of \u226590 mmHg.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011903500009793788,
+    "generation_time_seconds": 1.2292154000024311,
+    "total_time_seconds": 1.2488300999975763
+  },
+  {
+    "query": "In Dahl salt-sensitive rats, what was the effect of switching from a high-salt to a low-salt diet on the vasoconstriction of mesenteric small arteries (MSAs) to norepinephrine?",
+    "expected_answer": "Switching from a high-salt diet to a low-salt diet (i.e., salt restriction) attenuated the vasoconstriction of the mesenteric small arteries (MSAs) to norepinephrine.",
+    "generated_answer": "Switching from a high-salt diet to a low-salt diet (i.e., salt restriction) attenuated the vasoconstriction of the MSAs to norepinephrine [Source: ijmsv20p0572.pdf].",
+    "retrieval_time_seconds": 0.011798899999121204,
+    "generation_time_seconds": 3.0044722000020556,
+    "total_time_seconds": 3.0243374000128824
+  },
+  {
+    "query": "How did ACE inhibitor treatment affect vasodilatation in the MSAs of Dahl-SS rats?",
+    "expected_answer": "ACE inhibitor treatment improved the vasodilatation of mesenteric small arteries more obviously.",
+    "generated_answer": "ACE inhibitor treatment improved vasodilatation in the mesenteric small arteries (MSAs) of Dahl-SS rats [Source: ijmsv20p0572.pdf].",
+    "retrieval_time_seconds": 0.01254030002746731,
+    "generation_time_seconds": 2.248813300015172,
+    "total_time_seconds": 2.269229900004575
+  },
+  {
+    "query": "What was the effect of a high-salt diet on the expression of local ACE, AT1R, and eNOS in the mesenteric small arteries of Dahl salt-sensitive rats?",
+    "expected_answer": "Pathologically, a high-salt diet induced changes in the local expression of angiotensin-converting enzyme (ACE), angiotensin II type 1 receptor (AT1R), and endothelial nitric oxide synthase (eNOS).",
+    "generated_answer": "A high-salt diet induced changes in local ACE, AT1R, and eNOS expression, which were involved in the processes induced by the high-salt diet [Source: ijmsv20p0572.pdf].",
+    "retrieval_time_seconds": 0.01147220001439564,
+    "generation_time_seconds": 2.7740173999918625,
+    "total_time_seconds": 2.7943532000062987
+  },
+  {
+    "query": "In the outpatient study of hypertensive patients with COVID-19, were ACE inhibitors or ARBs associated with the risk of hospitalization?",
+    "expected_answer": "In the outpatient study, neither ACE inhibitors (hazard ratio [HR], 0.77; 95% CI, 0.53\u20131.13, P=0.18) nor ARBs (HR, 0.88; 95% CI, 0.61\u20131.26, P=0.48) were associated with hospitalization risk.",
+    "generated_answer": "Our study findings do not support a change to the current use of angiotensin-converting enzyme inhibitors and angiotensin receptor blockers among patients with hypertension being managed in the outpatient setting and at risk of infection with SARS-CoV-2 [Source: JAH3-10-e018086.pdf]. Overall, these drugs did not confer additional risk or benefit in terms of hospitalization [Source: JAH3-10-e018086.pdf].",
+    "retrieval_time_seconds": 0.010050899989437312,
+    "generation_time_seconds": 4.331259200000204,
+    "total_time_seconds": 4.349335799983237
+  },
+  {
+    "query": "What was the primary outcome in the inpatient study of COVID-19 patients?",
+    "expected_answer": "In the inpatient study, the primary outcome was in-hospital mortality.",
+    "generated_answer": "The primary outcome in the inpatient study of COVID-19 patients was hospital mortality among inpatients [Source: JAH3-10-e018086.pdf].",
+    "retrieval_time_seconds": 0.010293599974829704,
+    "generation_time_seconds": 1.9215895000088494,
+    "total_time_seconds": 1.939666699996451
+  },
+  {
+    "query": "Did the study find that ACE inhibitors or ARBs should be discontinued in hypertensive patients at risk of COVID-19?",
+    "expected_answer": "The study findings do not support a change to the current use of angiotensin-converting enzyme inhibitors and angiotensin receptor blockers among patients with hypertension being managed in the outpatient setting and at risk of infection with SARS-CoV-2.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.012703500018687919,
+    "generation_time_seconds": 1.132187299983343,
+    "total_time_seconds": 1.1539883999794256
+  },
+  {
+    "query": "What are Accessory Renal Arteries (ARAs)?",
+    "expected_answer": "Accessory renal arteries (ARAs), also known as multiple or additional renal arteries, are a common anatomic variation of renal vessels.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010618100001011044,
+    "generation_time_seconds": 1.1706596000003628,
+    "total_time_seconds": 1.1893845000013243
+  },
+  {
+    "query": "In the case-control study, how did the 24-hour blood pressure of patients with ARAs compare to those without?",
+    "expected_answer": "The 24-hour blood pressure (4.33/2.43 mm Hg higher) of patients in the ARA group was significantly higher than those of the control group (P<0.05).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010526199999731034,
+    "generation_time_seconds": 1.2044073000142816,
+    "total_time_seconds": 1.2227198000182398
+  },
+  {
+    "query": "What mechanism might explain how ARAs contribute to higher blood pressure in patients with essential hypertension?",
+    "expected_answer": "The mechanism might be related to overactivation of the renin-angiotensin-aldosterone system and the sympathetic nervous system.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011065099999541417,
+    "generation_time_seconds": 1.095256500004325,
+    "total_time_seconds": 1.1137042000191286
+  },
+  {
+    "query": "What is the effect of hypertension on resting metabolic rate (RMR) in obese and overweight patients?",
+    "expected_answer": "Hypertension in obese and overweight patients is associated with an elevated resting metabolic rate (RMR).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01216390001354739,
+    "generation_time_seconds": 1.25442819998716,
+    "total_time_seconds": 1.2747249999956694
+  },
+  {
+    "query": "In the study on RMR, how did the RMR normalized to lean body mass (LBM) compare between untreated and ACEI/ARB-treated hypertensive women?",
+    "expected_answer": "The resting metabolic rate (RMR) normalized to the lean body mass (LBM) was 15% higher in the untreated than ACEI/ARB-treated hypertensive women (p = .003).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011904799990588799,
+    "generation_time_seconds": 1.0371916000149213,
+    "total_time_seconds": 1.056160700012697
+  },
+  {
+    "query": "What three factors explained 78% of the variability in RMR in the multiple regression analysis?",
+    "expected_answer": "Lean body mass, age, and the double product (heart rate x systolic blood pressure) explained 78% of the variability in RMR.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.0109148999908939,
+    "generation_time_seconds": 1.1865192000113893,
+    "total_time_seconds": 1.2054387999814935
+  },
+  {
+    "query": "What are Neutrophil Extracellular Traps (NETs)?",
+    "expected_answer": "NETs are complexes of intermixed nuclear and cytoplasmic neutrophil contents, including decondensed chromatin DNA, histones, and granule proteins, that are released into the extracellular space.",
+    "generated_answer": "Neutrophil Extracellular Traps (NETs) are complex structures formed by neutrophils, which contain effector molecules or components released by neighboring cells. These NETs have been shown to effectively trap and degrade pro-inflammatory mediators in vitro and in vivo [Source: JCH-27-e14942.pdf].",
+    "retrieval_time_seconds": 0.010449299996253103,
+    "generation_time_seconds": 3.405677900009323,
+    "total_time_seconds": 3.4242819999926724
+  },
+  {
+    "query": "What is the process of NET formation called?",
+    "expected_answer": "The process involving the formation of neutrophil extracellular traps (NETs) is called NETosis.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.0112838999775704,
+    "generation_time_seconds": 1.2065290000173263,
+    "total_time_seconds": 1.2257365999976173
+  },
+  {
+    "query": "How do NETs promote vascular smooth muscle cell (VSMC) proliferation, contributing to hypertension?",
+    "expected_answer": "NETs promote vascular smooth muscle cell proliferation due to an increase in G1/S transition, which is promoted by thymidine kinase 1 (TK1) through the regulation of the PI3K/Akt/CDKN1b signaling axis.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010098300001118332,
+    "generation_time_seconds": 1.1327200999949127,
+    "total_time_seconds": 1.1502396000141744
+  },
+  {
+    "query": "How did LV and RV mass compare between African ancestry (Afr-a) and European ancestry (Eu-a) hypertensives in the CMR study?",
+    "expected_answer": "Left ventricular (LV) and right ventricular (RV) mass, indexed to body-surface-area, were significantly greater in African ancestry hypertensives than in European ancestry hypertensives (67.1 \u00b1 21.7 vs. 58.3 \u00b1 16.7 g/m2 and 12.6 \u00b1 3.48 vs. 10.7 \u00b1 2.71 g/m2, respectively).",
+    "generated_answer": "RV mass and M/V were significantly greater in the African ancestry (Afr-a) hypertensives compared to European ancestry (Eu-a) hypertensives (Table 2; Figure 2) [Source: jeae097.pdf].",
+    "retrieval_time_seconds": 0.010865699994610623,
+    "generation_time_seconds": 2.5309249999991152,
+    "total_time_seconds": 2.5490021999867167
+  },
+  {
+    "query": "What myocardial tissue abnormalities were more prevalent in African ancestry hypertensives?",
+    "expected_answer": "Prolonged T2 relaxation time and a higher prevalence and extent of myocardial fibrosis (MF) were observed in African ancestry patients.",
+    "generated_answer": "In African ancestry hypertensive patients, we found that low-grade myocardial inflammation and enhanced arterial afterload may contribute to greater myocardial fibrosis (MF) [Source: jeae097.pdf]. Additionally, MF[+] patients had higher biventricular volumes, mass, and concentric hypertrophy [Source: jeae097.pdf].",
+    "retrieval_time_seconds": 0.010229600011371076,
+    "generation_time_seconds": 3.399776500009466,
+    "total_time_seconds": 3.4175817999930587
+  },
+  {
+    "query": "What is the definition of ethnicity provided in the study on cardiac remodelling?",
+    "expected_answer": "Ethnicity is defined as \u2018cultural factors such as language, religion, cuisine, ancestry, and nationality that specific communities share. Ethnicity is also considered a social construct that individuals may change as their community and personal dynamics change\u2019.",
+    "generated_answer": "Ethnicity is defined by Lewis et al. as \"cultural factors\" [Source: jeae097.pdf].",
+    "retrieval_time_seconds": 0.010145399981411174,
+    "generation_time_seconds": 1.6087652999849524,
+    "total_time_seconds": 1.6260151000169571
+  },
+  {
+    "query": "What is considered a candidate for the most common cause of secondary hypertension?",
+    "expected_answer": "Primary aldosteronism is commonly considered a leading candidate for the most common cause of secondary hypertension.",
+    "generated_answer": "A candidate for the most common cause of secondary hypertension is primary aldosteronism (PA) [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.010403400025097653,
+    "generation_time_seconds": 1.9820118000207003,
+    "total_time_seconds": 2.001729899988277
+  },
+  {
+    "query": "Why is timely diagnosis of primary aldosteronism important for patient outcomes?",
+    "expected_answer": "Timely diagnosis allows for targeted medical and/or surgical management, which can help patients achieve blood pressure goals, reduce risk for cardiovascular events, reduce left ventricular mass, improve hypokalemia, improve kidney function, and reduce risk for all-cause mortality.",
+    "generated_answer": "Timely diagnosis of primary aldosteronism is important for patient outcomes because it can avert cardiovascular risk and prevent avoidable target organ injury [Source: nihms-1824192.pdf]. Delayed intervention risks increased complication rates, including coronary artery disease, stroke, atrial fibrillation, and heart failure, which are independent of blood pressure levels [Source: nihms-1824192.pdf]. Additionally, targeted treatment with adrenalectomy or mineralocorticoid receptor antagonists has been shown to equilibrate cardiovascular complications between patients with primary aldosteronism and those with essential hypertension [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.010379399987868965,
+    "generation_time_seconds": 6.104186000011396,
+    "total_time_seconds": 6.122816499992041
+  },
+  {
+    "query": "What is the recommendation for primary aldosteronism screening in a patient with new or untreated hypertension?",
+    "expected_answer": "If a patient presents with new or untreated hypertension, screening for primary aldosteronism should be considered before starting antihypertensive agents that could affect the renin\u2013angiotensin\u2013aldosterone system.",
+    "generated_answer": "For patients with hypertension and obstructive sleep apnea, rigorous screening for primary aldosteronism is cost-saving due to cardiovascular risk averted [Source: nihms-1824192.pdf]. Cost should not be a barrier to improving primary aldosteronism screening adherence [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.01035789999878034,
+    "generation_time_seconds": 3.4485885000030976,
+    "total_time_seconds": 3.466837200016016
+  },
+  {
+    "query": "In the 2014 Ghana Demographic and Health Survey, what was the prevalence of hypertension according to the 2017 ACC/AHA guideline?",
+    "expected_answer": "Overall, 30.43% (n = 3698) of respondents had hypertension as per the 2017 ACC/AHA guideline.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010446899977978319,
+    "generation_time_seconds": 1.1779998999845702,
+    "total_time_seconds": 1.1959704000037163
+  },
+  {
+    "query": "According to the JNC7 guideline, what was the prevalence of hypertension in the 2014 Ghana survey?",
+    "expected_answer": "According to the JNC7 guideline, 11.48% (n = 1395) of respondents had hypertension.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010308199998689815,
+    "generation_time_seconds": 1.1178555999940727,
+    "total_time_seconds": 1.135129300004337
+  },
+  {
+    "query": "Which factors were significantly associated with hypertension according to both the 2017 ACC/AHA and JNC7 guidelines in Ghana?",
+    "expected_answer": "Significant factors according to both guidelines included older age groups (25-34, 35-44, 45-54, 55-64 years), being male, and being an urban resident.",
+    "generated_answer": "According to the study, administrative divisions were significantly associated with hypertension in line with the 2017 ACC/AHA guidelines. People from Rangpur and Rajshahi divisions found higher odds in both guidelines [Source: 41598_2021_Article_94947.pdf].",
+    "retrieval_time_seconds": 0.010461199999554083,
+    "generation_time_seconds": 2.951902999979211,
+    "total_time_seconds": 2.969731800025329
+  },
+  {
+    "query": "What is the definition of a 'reclassified hypertensive' individual according to the AHA/ACC-2017 guideline in the ASPREE study?",
+    "expected_answer": "A 'reclassified hypertensive' is an individual who was normotensive by pre-2017 guidelines but hypertensive by the AHA/ACC-2017 guideline, having a blood pressure of 130\u2013139 mmHg systolic and/or 80\u201389 mmHg diastolic and not receiving any antihypertensive medication.",
+    "generated_answer": "According to the ASPREE study, a'reclassified hypertensive' individual is someone who is classified as having hypertension due to the lowering of the blood pressure cut-offs in the AHA/ACC 2017 guideline, and would be recommended for antihypertensive treatment [Source: nihms-1698921.pdf].",
+    "retrieval_time_seconds": 0.010022100002970546,
+    "generation_time_seconds": 3.356037399993511,
+    "total_time_seconds": 3.3736866999824997
+  },
+  {
+    "query": "In the ASPREE study, what percentage of participants were 'reclassified hypertensive' by the AHA/ACC-2017 guideline?",
+    "expected_answer": "An additional 12.3% (2354 out of 19,114) of participants were \u2018reclassified hypertensive\u2019 by the AHA/ACC-2017 guideline.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011078599985921755,
+    "generation_time_seconds": 1.204267199995229,
+    "total_time_seconds": 1.223355400026776
+  },
+  {
+    "query": "How did the observed CVD event rates compare between 'reclassified hypertensive' and 'pre-2017 hypertensive' groups in the ASPREE study?",
+    "expected_answer": "A lower cardiovascular disease (CVD) rate of 8.9 per 1000 person-years was observed in the \u2018reclassified hypertensive\u2019 group compared with 12.1 per 1000 person-years in the \u2018pre-2017 hypertensive\u2019 group (P=0.01).",
+    "generated_answer": "The observed CVD event rates were significantly lower in the'reclassified hypertensive' participants than in those who were classified as hypertensive using pre-2017 guidelines [Source: nihms-1698921.pdf].",
+    "retrieval_time_seconds": 0.01126309999381192,
+    "generation_time_seconds": 2.7083624000079,
+    "total_time_seconds": 2.7282723000098485
+  },
+  {
+    "query": "In patients with masked hypertension diagnosed by home blood pressure monitoring, how did indexed LV mass and relative wall thickness compare to normotensives?",
+    "expected_answer": "In subjects with masked hypertension diagnosed by home blood pressure monitoring (HBPM), indexed left ventricular (LV) mass and relative wall thickness were generally intermediate between values observed in normotensives and sustained hypertensives, and were significantly greater in masked hypertension than in normotensives.",
+    "generated_answer": "In patients with masked hypertension diagnosed by home blood pressure monitoring, indexed LV mass was generally intermediate between values observed in normotensives and sustained hypertensives, and was significantly greater in masked hypertensives than normotensives [Source: nihms-1766793.pdf]. Additionally, relative wall thickness was also generally intermediate between values observed in normotensives and sustained hypertensives, and was significantly greater in masked hypertensives than normotensives [Source: nihms-1766793.pdf].",
+    "retrieval_time_seconds": 0.010328100004699081,
+    "generation_time_seconds": 5.053989100008039,
+    "total_time_seconds": 5.072411500004819
+  },
+  {
+    "query": "Which method, HBPM or ABPM, was suggested to be superior in identifying patients with masked hypertension who have early LV remodeling and diastolic LV dysfunction?",
+    "expected_answer": "The results suggest that home blood pressure monitoring (HBPM) may be superior to ambulatory blood pressure monitoring (ABPM) in identifying patients with masked hypertension who have early LV remodeling and diastolic LV dysfunction.",
+    "generated_answer": "HBPM was suggested to be more effective than ABPM in identifying masked hypertension (MH) associated with impaired left ventricular (LV) relaxation [Source: nihms-1766793.pdf].",
+    "retrieval_time_seconds": 0.011628500011283904,
+    "generation_time_seconds": 2.432475300010992,
+    "total_time_seconds": 2.452707399992505
+  },
+  {
+    "query": "In the pediatric study, what percentage of patients with initial white coat hypertension progressed to an abnormal ABPM phenotype on follow-up?",
+    "expected_answer": "On follow-up ambulatory blood pressure monitoring (ABPM), 61% of patients progressed to an abnormal ABPM phenotype, which included 23% progressing to ambulatory hypertension and 38% to ambulatory prehypertension.",
+    "generated_answer": "Most patients with white coat hypertension in the pediatric study progressed to an abnormal ABPM phenotype, with 23% progressing to ambulatory hypertension after a median follow-up time of 14 months [Source: nihms-1820707.pdf].",
+    "retrieval_time_seconds": 0.011010599992005154,
+    "generation_time_seconds": 2.647598100011237,
+    "total_time_seconds": 2.666320000018459
+  },
+  {
+    "query": "What is the difference between 'stable white coat hypertension' and 'intermittent white coat hypertension' as defined in the pediatric study?",
+    "expected_answer": "'Stable white coat hypertension' was defined as those patients with hypertensive blood pressure in the pediatric nephrology clinic, while 'intermittent white coat hypertension' was defined as those with normal blood pressure in the clinic.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.012647600000491366,
+    "generation_time_seconds": 1.2550747000204865,
+    "total_time_seconds": 1.276790300005814
+  },
+  {
+    "query": "What was the median interval time between ABPM measurements in the pediatric white coat hypertension study?",
+    "expected_answer": "The median interval time between ambulatory blood pressure monitoring (ABPM) measurements was 14 months.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01168090000282973,
+    "generation_time_seconds": 1.031449000001885,
+    "total_time_seconds": 1.0504416000039782
+  },
+  {
+    "query": "Is screening for primary aldosteronism in the hypertensive obstructive sleep apnea population cost-saving?",
+    "expected_answer": "Yes, for patients with hypertension and obstructive sleep apnea, rigorous screening for primary aldosteronism is cost-saving due to the cardiovascular risk that is averted.",
+    "generated_answer": "Yes, screening for primary aldosteronism in the hypertensive obstructive sleep apnea population is cost-saving due to cardiovascular risk averted [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.011619999975664541,
+    "generation_time_seconds": 2.418094900000142,
+    "total_time_seconds": 2.4379690999921877
+  },
+  {
+    "query": "What is the estimated prevalence of primary aldosteronism in patients with resistant hypertension?",
+    "expected_answer": "Primary aldosteronism is now recognized to represent 12% to 22% of resistant hypertension cases.",
+    "generated_answer": "According to the KNOWLEDGE BASE, primary aldosteronism (PA) is a frequent etiology of secondary hypertension, representing 12% to 22% of resistant hypertension cases [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.010694600001443177,
+    "generation_time_seconds": 2.7634663000062574,
+    "total_time_seconds": 2.7825100000191014
+  },
+  {
+    "query": "Why does primary aldosteronism carry a higher risk profile than essential hypertension?",
+    "expected_answer": "Primary aldosteronism (PA) bears a risk profile that is substantially higher than that of essential hypertension because hyperaldosteronism provokes vascular and cardiac fibrosis, and the resulting increased complication rates are independent of blood pressure levels.",
+    "generated_answer": "Primary aldosteronism (PA) carries a higher risk profile than essential hypertension because it bears a risk profile that is substantially higher than that of essential hypertension [Source: nihms-1824192.pdf].",
+    "retrieval_time_seconds": 0.011902899976121262,
+    "generation_time_seconds": 2.5463779999990948,
+    "total_time_seconds": 2.5665653999894857
+  },
+  {
+    "query": "What is minoxidil?",
+    "expected_answer": "Minoxidil, also known as Loniten, is a potent antihypertensive drug that works by dilating pre-capillary arterioles.",
+    "generated_answer": "Minoxidil is a medication that dilates pre-capillary arterioles and stimulates/maintains hair growth [Source: nihms837917.pdf]. It is also used to treat hypertension, and its unique mechanism of action is on vascular smooth muscle, leading to increased blood flow [Source: nihms837917.pdf].",
+    "retrieval_time_seconds": 0.011427299992647022,
+    "generation_time_seconds": 3.3235195000015665,
+    "total_time_seconds": 3.342375300009735
+  },
+  {
+    "query": "What are the four physiologic mechanisms that contribute to edema from minoxidil?",
+    "expected_answer": "The four mechanisms are: 1. Capillary Leakage due to arteriolar dilation, 2. Reduced Glomerular Filtration Pressure due to blood pressure lowering, 3. Renal Nerve Released Norepinephrine causing sodium retention, and 4. Beta adrenoceptor mediated renin release leading to aldosterone production.",
+    "generated_answer": "The four physiologic mechanisms that contribute to edema from minoxidil are:\n\nCapillary Leakage\u2014A function of precapillary arterioles is to prevent excess blood flow into capillaries when blood pressure is temporarily increased. Long-standing high blood pressure from any cause leads to hypertrophy of this circular smooth muscle [Source: nihms837917.pdf].\n\nThese mechanisms are dependent on excess dietary sodium [Source: nihms837917.pdf].",
+    "retrieval_time_seconds": 0.010421799990581349,
+    "generation_time_seconds": 4.624040399998194,
+    "total_time_seconds": 4.643044299999019
+  },
+  {
+    "query": "What is the real Minimum Daily Requirement (MDR) for sodium according to the text?",
+    "expected_answer": "The real Minimum Daily Requirement (MDR) for sodium is less than 0.2 grams per day.",
+    "generated_answer": "According to the text, the real Minimum Daily Requirement (MDR) for sodium is <0.2 grams/day [Source: nihms837917.pdf].",
+    "retrieval_time_seconds": 0.010278700006892905,
+    "generation_time_seconds": 2.1379243999836035,
+    "total_time_seconds": 2.156133599986788
+  },
+  {
+    "query": "In uncontrolled hypertensive patients, what was the effect of oral magnesium therapy on blood pressure?",
+    "expected_answer": "In uncontrolled hypertensive patients, all magnesium doses studied (ranging from 240\u2013607 mg/day) showed a significant decrease in both systolic and diastolic blood pressure.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.012359199987258762,
+    "generation_time_seconds": 1.3732782999868505,
+    "total_time_seconds": 1.3943269000155851
+  },
+  {
+    "query": "What daily dose of magnesium was required to lower blood pressure in untreated hypertensive patients?",
+    "expected_answer": "A magnesium dose of greater than 600 mg/day was required to safely lower blood pressure in untreated hypertensive patients.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010274300002492964,
+    "generation_time_seconds": 1.2299337999720592,
+    "total_time_seconds": 1.2475467999756802
+  },
+  {
+    "query": "Do normotensive subjects show a BP-lowering effect with oral magnesium therapy?",
+    "expected_answer": "No, normotensive subjects do not show a blood pressure-lowering effect with oral magnesium therapy.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010340800014091656,
+    "generation_time_seconds": 1.1398980999947526,
+    "total_time_seconds": 1.1573730999953113
+  },
+  {
+    "query": "How did ACE inhibitors and ARBs compare in their effect on the glucose infusion rate (GIR) in hypertensive patients?",
+    "expected_answer": "The efficacy of ACE inhibitors on improving the glucose infusion rate (GIR) was significantly better than that of ARBs (WMD = -1.09, 95% CI: -1.34 to -0.85, P < 0.001).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010507200000574812,
+    "generation_time_seconds": 1.239391400013119,
+    "total_time_seconds": 1.2579934999812394
+  },
+  {
+    "query": "In the subgroup of hypertensive patients with diabetes mellitus, how did ACE inhibitors and ARBs compare in their effect on HOMA-IR?",
+    "expected_answer": "In the hypertensive patients with diabetes mellitus subgroup, ACE inhibitors showed a more effective improvement on HOMA-IR compared to ARBs (WMD = 0.55, 95% CI: 0.49 to 0.61, P < 0.001).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010799899988342077,
+    "generation_time_seconds": 1.230586999998195,
+    "total_time_seconds": 1.2485300000116695
+  },
+  {
+    "query": "What is HOMA-IR?",
+    "expected_answer": "HOMA-IR stands for homeostasis model assessment of insulin resistance.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.01026300000376068,
+    "generation_time_seconds": 1.154598499997519,
+    "total_time_seconds": 1.171965600020485
+  },
+  {
+    "query": "Was hypertension associated with a higher risk of severe COVID-19 in the UK Biobank study?",
+    "expected_answer": "Yes, hypertension was associated with 22% higher odds of severe COVID-19 (Odds ratio (OR) 1.22; 95% confidence interval (CI) 1.12, 1.33) compared with normotension after adjusting for confounding variables.",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.011938299983739853,
+    "generation_time_seconds": 1.1906604999967385,
+    "total_time_seconds": 1.2100001999933738
+  },
+  {
+    "query": "In treated hypertensive individuals, what was the relationship between systolic blood pressure (SBP) and the risk of severe COVID-19?",
+    "expected_answer": "There was a J-shaped relationship; elevated SBP showed a dose-response relationship with severe COVID-19 (e.g., SBP 150-159mmHg had an OR of 1.91), and SBP <120mmHg was also associated with greater odds of severe COVID-19 (OR 1.40).",
+    "generated_answer": "I do not have sufficient information to answer that question.",
+    "retrieval_time_seconds": 0.010221999982604757,
+    "generation_time_seconds": 1.2391141999978572,
+    "total_time_seconds": 1.2569987000024412
+  }
+]

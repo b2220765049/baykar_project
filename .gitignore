@@ -1,0 +1,16 @@
+# Local env files (do not commit secrets)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Data & caches (keep as needed)
+*.cache/
+.cache/
+**/.DS_Store
