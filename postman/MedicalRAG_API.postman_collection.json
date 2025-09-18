@@ -1,0 +1,193 @@
+{
+  "info": {
+    "name": "Medical RAG API",
+    "description": "Postman collection to test all endpoints of the Medical RAG API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8000", "type": "string" },
+    { "key": "session_id", "value": "", "type": "string" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": ["{{base_url}}"],
+          "path": ["health"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Body has ok=true', function () { var json = pm.response.json(); pm.expect(json.ok).to.eql(true); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Meta",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/meta",
+          "host": ["{{base_url}}"],
+          "path": ["meta"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Has version/model fields', function () { var j = pm.response.json(); pm.expect(j).to.have.property('version'); pm.expect(j).to.have.property('model'); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Query",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"question\": \"What is white coat hypertension?\",\n  \"max_tokens\": 256,\n  \"temperature\": 0.0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/query",
+          "host": ["{{base_url}}"],
+          "path": ["query"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Has answer and timing fields', function () { var j = pm.response.json(); pm.expect(j).to.have.property('answer'); pm.expect(j).to.have.property('retrieved_sources'); pm.expect(j).to.have.property('total_time_seconds'); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Logs (list)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/logs?limit=5&offset=0",
+          "host": ["{{base_url}}"],
+          "path": ["logs"],
+          "query": [
+            { "key": "limit", "value": "5" },
+            { "key": "offset", "value": "0" }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Has logs array', function () { var j = pm.response.json(); pm.expect(j).to.have.property('logs'); pm.expect(Array.isArray(j.logs)).to.eql(true); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chats (list)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/chats?limit=10&offset=0",
+          "host": ["{{base_url}}"],
+          "path": ["chats"],
+          "query": [
+            { "key": "limit", "value": "10" },
+            { "key": "offset", "value": "0" }
+          ]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+              "pm.test('Has sessions array', function () { var j = pm.response.json(); pm.expect(j).to.have.property('sessions'); pm.expect(Array.isArray(j.sessions)).to.eql(true); });"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Chat detail (by session_id)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/chats/{{session_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["chats", "{{session_id}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200 or 500', function () { pm.expect([200,500]).to.include(pm.response.code); });",
+              "// Note: set {{session_id}} after running 'Chats (list)' to a valid session ID"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Delete chat (by session_id)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/chats/{{session_id}}",
+          "host": ["{{base_url}}"],
+          "path": ["chats", "{{session_id}}"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 200 or 500', function () { pm.expect([200,500]).to.include(pm.response.code); });",
+              "// Note: set {{session_id}} after running 'Chats (list)' to a valid session ID"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ]
+}
