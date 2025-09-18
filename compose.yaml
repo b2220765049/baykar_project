@@ -28,6 +28,7 @@ services:
     # gpus: all
     volumes:
       - hf-cache:/home/appuser/.cache/huggingface
+      - ./data/logs:/app/data/logs
   # Optional UI service that runs the Gradio interface. It builds the same
   # image so the UI code and dependencies are available. The UI will connect
   # to the `app` service using the Docker network at http://app:8000.
@@ -50,5 +51,6 @@ services:
       - app
     volumes:
       - hf-cache:/home/appuser/.cache/huggingface
+      - ./data/logs:/app/data/logs
 volumes:
   hf-cache:

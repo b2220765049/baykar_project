@@ -16,6 +16,7 @@ from src.utils.database import (
     list_chat_sessions,
     list_chat_messages_raw,
     delete_chat_session,
+    create_chat_session,
 )
 from dotenv import load_dotenv
 
@@ -40,6 +41,11 @@ class QueryResponse(BaseModel):
     retrieval_time_seconds: float
     generation_time_seconds: float
     total_time_seconds: float
+
+
+class ChatCreateResponse(BaseModel):
+    session_id: str
+    created_at: str
 
 
  
@@ -374,6 +380,19 @@ def chats(limit: int = 100, offset: int = 0):
     try:
         sessions = list_chat_sessions(limit=limit, offset=offset)
         return {"sessions": sessions, "limit": limit, "offset": offset}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/chats", response_model=ChatCreateResponse, status_code=201)
+def chat_create():
+    """Create a new chat session and return its identifier."""
+    try:
+        session_id = create_chat_session()
+        # created_at is encoded inside DB when creating; return an ISO timestamp here as well
+        # For simplicity, reuse the current time for created_at in response
+        from datetime import datetime
+        return {"session_id": session_id, "created_at": datetime.now().isoformat()}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

@@ -158,6 +158,16 @@ Example response (truncated):
   - deleted: boolean
   - session_id: string
 
+### 8) Create chat (new session)
+
+- Method: POST
+- Path: /chats
+- Response:
+  - session_id: string
+  - created_at: string (ISO-8601)
+
+Use this to obtain a new session_id for clients that don't manage sessions locally.
+
 ## PowerShell examples
 
 Set base URL:
@@ -206,9 +216,17 @@ if ($sid) { Invoke-RestMethod -Uri "$base/chats/$sid" -Method Get }
 if ($sid) { Invoke-RestMethod -Uri "$base/chats/$sid" -Method Delete }
 ```
 
+- Create chat:
+
+```powershell
+$created = Invoke-RestMethod -Uri "$base/chats" -Method Post
+$created
+```
+
 ## Notes
 
 - Interactive API docs are served at /docs (Swagger) and /redoc (ReDoc).
 - Retrieval requires the vector index and chunks JSON paths configured in `config.py`.
 - Generation requires model weights access (Hugging Face token is handled server-side).
 - All responses are JSON. Times are in seconds.
+- Persistence: when using Docker Compose, the SQLite DB is bind-mounted at `./data/logs:/app/data/logs` so sessions/logs persist across restarts and are shared between API and UI.

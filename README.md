@@ -85,6 +85,7 @@ docker compose up
 - POST /query
 - GET /logs
 - GET /chats
+- POST /chats
 - GET /chats/{session_id}
 - DELETE /chats/{session_id}
 
@@ -110,6 +111,7 @@ Notebook for quick DB inspection:
 ## Troubleshooting
 - HF token warning: ensure `.env` contains `HF_TOKEN`.
 - UI can’t reach API: confirm both containers run; API on 8000, UI on 7860.
+- Chats not persisting: ensure Compose mounts `./data/logs:/app/data/logs` so `chat_logs.db` persists and is shared.
 
 ## Security
 - Do not commit `.env` or `chat_logs.db`.

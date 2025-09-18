@@ -142,6 +142,33 @@
       ]
     },
     {
+      "name": "Create chat (POST)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/chats",
+          "host": ["{{base_url}}"],
+          "path": ["chats"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+              "var j = pm.response.json();",
+              "pm.test('Has session_id', function () { pm.expect(j).to.have.property('session_id'); });",
+              "// Store for later requests",
+              "pm.collectionVariables.set('session_id', j.session_id);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
       "name": "Chat detail (by session_id)",
       "request": {
         "method": "GET",
