@@ -60,5 +60,5 @@ USER ${APP_USER}
 
 EXPOSE 8000
 
-# Start the FastAPI application using Uvicorn
-CMD ["uvicorn", "app_server:app", "--host", "0.0.0.0", "--port", "8000"]
+# Start the FastAPI application using Uvicorn (no wrapper module needed)
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "8000"]
