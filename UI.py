@@ -1,5 +1,4 @@
 import config
-import json
 import gradio as gr
 import requests
 import os
@@ -10,7 +9,7 @@ from src.utils.database import (
     create_chat_session,
     save_chat_message,
     get_session_messages,
-    delete_chat_session,
+    delete_chat_session
 )
 
 # --- Configuration ---
@@ -46,7 +45,14 @@ def delete_chat_history(session_id):
     if session_id:
         print(f"Deleted chat session: {session_id}")
 
-# --- Core API Call Function (Unchanged) ---
+# --- API helpers ---
+def _api_base() -> str:
+    # If API_URL ends with /query, strip it; else return as-is
+    if API_URL.endswith("/query"):
+        return API_URL[: -len("/query")]
+    return API_URL
+
+# --- Core API Call Function (Unchanged for full reply) ---
 def call_rag_api(message: str, history: list) -> str:
     payload = {"question": message, "max_tokens": 1024, "temperature": 0.0}
     try:
@@ -66,14 +72,42 @@ def call_rag_api(message: str, history: list) -> str:
     except Exception as e:
         return f"An unexpected error occurred: {e}"
 
+def stream_rag_api(message: str):
+    """Consume the SSE streaming endpoint and yield partial text as it arrives.
+
+    Falls back to non-streaming if the stream endpoint is unavailable.
+    """
+    stream_url = API_URL.rstrip("/") + "/stream"
+    payload = {"question": message, "max_tokens": 1024, "temperature": 0.0}
+    try:
+        with requests.post(stream_url, json=payload, stream=True, timeout=300) as r:
+            r.raise_for_status()
+            for line in r.iter_lines(decode_unicode=True):
+                if not line:
+                    continue
+                if line.startswith(":"):
+                    # Comment line in SSE, ignore
+                    continue
+                if line.startswith("event:"):
+                    # We only care about 'end' to finish
+                    if line.strip() == "event: end":
+                        break
+                    continue
+                if line.startswith("data:"):
+                    # Preserve leading/trailing spaces; only remove the optional single space after colon
+                    data = line[len("data:"):]
+                    if data.startswith(" "):
+                        data = data[1:]
+                    if data == "[DONE]":
+                        break
+                    yield data
+    except requests.exceptions.RequestException:
+        # Fallback: yield full answer once via non-streaming API
+        yield call_rag_api(message, [])
+
 # --- Gradio UI Definition using gr.Blocks ---
-with gr.Blocks(
-    theme=gr.themes.Soft(),
-    css="footer {display: none !important}"
-) as demo:
+with gr.Blocks(theme=gr.themes.Soft(), css="footer {display: none !important}") as demo:
     current_chat_file_state = gr.State(None)
-    # Track last session id seen by chat_fn to hard-reset history when switching
-    last_session_state = gr.State(None)
 
     # --- UI Layout ---
     gr.Markdown("# 🩺 Medical RAG Chatbot - Hypertension")
@@ -93,14 +127,11 @@ with gr.Blocks(
                     chat_rows.append((row, load_btn, delete_btn))
 
         with gr.Column(scale=4):
-            # Reuse explicit Chatbot and Textbox so left-panel controls can still
-            # reference them (e.g., loading history, starting new chats).
-            chatbot = gr.Chatbot(height=600, label="Chat", type="messages", elem_id="chatbot-box")
-            msg_textbox = gr.Textbox(show_label=False, placeholder="Type your question here...", container=False)
-            # Hidden event trigger to auto-refresh chat list when messages are saved/deleted
-            chat_list_refresher = gr.State(0)
-
-            # Hardcoded Accuracy=5 example questions from your CSV
+            chatbot = gr.Chatbot(height=600, label="Chat", type="messages")
+            with gr.Row():
+                msg_textbox = gr.Textbox(show_label=False, placeholder="Type your question here...", container=False, scale=8)
+                send_btn = gr.Button("Send", scale=1)
+            # Example questions for quick testing (click to populate the textbox)
             examples_list = [
                 "What are the five most predictive variables for White Coat Effect (WCE) found by a machine learning algorithm study?",
                 "Is White Coat Uncontrolled Hypertension (WUCH) associated with any increased cardiovascular risk?",
@@ -115,64 +146,6 @@ with gr.Blocks(
                 "In Dahl salt-sensitive rats, what was the effect of switching from a high-salt to a low-salt diet on the vasoconstriction of mesenteric small arteries (MSAs) to norepinephrine?",
                 "How did ACE inhibitor treatment affect vasodilatation in the MSAs of Dahl-SS rats?",
             ]
-
-            # Maintain explicit messages state to avoid bleed across sessions
-            messages_state = gr.State([])
-
-            def send_message(message, messages, current_session_id, last_session_id):
-                # Normalize message text
-                if isinstance(message, dict):
-                    message_text = message.get("content", "")
-                else:
-                    message_text = (message or "").strip()
-                if not message_text:
-                    # No-op; return existing state
-                    return messages or [], "", current_session_id, chat_list_refresher.value if hasattr(chat_list_refresher, 'value') else 0, last_session_id or current_session_id, messages or []
-
-                # Reset messages if session switched or not set
-                if not current_session_id or (last_session_id and last_session_id != current_session_id):
-                    messages = []
-
-                # Convert messages (list of {role, content}) to pairs for backend
-                pairs_history = []
-                for m in messages or []:
-                    role = m.get("role")
-                    content = m.get("content", "")
-                    if role == "user":
-                        pairs_history.append([content, None])
-                    elif role == "assistant":
-                        if pairs_history and pairs_history[-1][1] is None:
-                            pairs_history[-1][1] = content
-                        else:
-                            pairs_history.append([None, content])
-
-                # Call backend
-                bot_message = call_rag_api(message_text, pairs_history)
-
-                # Ensure session id
-                if not current_session_id:
-                    current_session_id = create_chat_session()
-
-                # Persist last exchange to DB
-                new_pairs = pairs_history + [[message_text, bot_message]]
-                save_chat_messages(new_pairs, current_session_id)
-
-                # Update messages state for UI (messages format)
-                new_messages = (messages or []) + [
-                    {"role": "user", "content": message_text},
-                    {"role": "assistant", "content": bot_message},
-                ]
-
-                return new_messages, "", current_session_id, time.time(), current_session_id, new_messages
-
-            # Wire sending on Enter
-            msg_textbox.submit(
-                fn=send_message,
-                inputs=[msg_textbox, messages_state, current_chat_file_state, last_session_state],
-                outputs=[chatbot, msg_textbox, current_chat_file_state, chat_list_refresher, last_session_state, messages_state],
-            )
-
-            # Clickable examples: populate the textbox for quick sending
             gr.Examples(examples_list, inputs=[msg_textbox], label="Examples")
 
     # --- RUN PHASE: Functions that UPDATE the pre-built UI ---
@@ -199,30 +172,54 @@ with gr.Blocks(
                 updates.extend([gr.update(visible=False), gr.update(value=""), gr.update(visible=False)])
         return updates
 
+    def pairs_to_messages(pairs):
+        messages = []
+        for u, a in pairs or []:
+            if u:
+                messages.append({"role": "user", "content": u})
+            if a:
+                messages.append({"role": "assistant", "content": a})
+        return messages
+
+    def messages_to_pairs(messages):
+        pairs = []
+        for m in messages or []:
+            role = m.get("role")
+            content = m.get("content", "")
+            if role == "user":
+                pairs.append([content, None])
+            elif role == "assistant":
+                if pairs and pairs[-1][1] is None:
+                    pairs[-1][1] = content
+                else:
+                    pairs.append([None, content])
+        return pairs
+
     def load_chat_action(index):
         chat_files = get_saved_chats()
         if index < len(chat_files):
             filename = chat_files[index]
-            history_pairs = load_chat_history(filename) or []
-            # Convert stored pair history [[user, assistant], ...] into
-            # messages format expected by Chatbot(type="messages").
-            messages = []
-            for u, a in history_pairs:
-                if u:
-                    messages.append({"role": "user", "content": u})
-                if a:
-                    messages.append({"role": "assistant", "content": a})
-            return messages, filename, filename, messages
-        return [], None, None, []
+            history_pairs = load_chat_history(filename)
+            return pairs_to_messages(history_pairs), filename
+        return [], None
 
     def delete_chat_action(index):
         chat_files = get_saved_chats()
         if index < len(chat_files):
             filename = chat_files[index]
-            # Actually delete from DB
-            delete_chat_session(filename)
+            # Try deleting via API first
+            try:
+                base = _api_base()
+                requests.delete(f"{base}/chats/{filename}", timeout=15)
+            except Exception:
+                pass
+            # Also delete locally to keep UI state in sync (in case DBs differ)
+            try:
+                delete_chat_session(filename)
+            except Exception:
+                pass
         # After deleting, return updates to refresh the list and clear the chat
-        return update_chat_list_display() + [[], None, None, []]
+        return update_chat_list_display() + [[], None]
 
     # --- BUILD PHASE: Wire up events for ALL pre-built components ---
     
@@ -233,23 +230,64 @@ with gr.Blocks(
         load_btn.click(
             fn=partial(load_chat_action, i),
             inputs=None,
-            outputs=[chatbot, current_chat_file_state, last_session_state, messages_state]
+            outputs=[chatbot, current_chat_file_state]
         )
         
         delete_btn.click(
             fn=partial(delete_chat_action, i),
             inputs=None,
-            outputs=all_chat_list_components + [chatbot, current_chat_file_state, last_session_state, messages_state]
+            outputs=all_chat_list_components + [chatbot, current_chat_file_state]
         )
 
-    # Auto-refresh: whenever chat_list_refresher changes (after send/delete), update list
-    chat_list_refresher.change(fn=update_chat_list_display, inputs=None, outputs=all_chat_list_components)
+    # --- Event wiring for main components ---
+    def user_message_handler(user_message, history):
+        # Append only the user message in messages format; assistant will be streamed
+        return "", (history or []) + [{"role": "user", "content": user_message}]
+
+    def bot_response_handler(history, current_session_id):
+        """True real-time streaming using the API's SSE endpoint."""
+        # Find the last user message content
+        user_message = None
+        for m in reversed(history or []):
+            if m.get("role") == "user":
+                user_message = m.get("content", "")
+                break
+        if user_message is None:
+            # Nothing to do
+            yield history or [], current_session_id
+            return
+
+        # Ensure there's an assistant message to fill
+        history = history or []
+        history.append({"role": "assistant", "content": ""})
+
+        collected = []
+        for chunk in stream_rag_api(user_message):
+            collected.append(chunk)
+            history[-1]["content"] = "".join(collected)
+            yield history, current_session_id
+
+        # Persist only once after streaming completes
+        if current_session_id is None:
+            current_session_id = create_chat_session()
+        save_chat_messages(messages_to_pairs(history), current_session_id)
+        yield history, current_session_id
+
+    msg_submit_event = msg_textbox.submit(user_message_handler, [msg_textbox, chatbot], [msg_textbox, chatbot]).then(
+        bot_response_handler, [chatbot, current_chat_file_state], [chatbot, current_chat_file_state]
+    )
+    send_click_event = send_btn.click(user_message_handler, [msg_textbox, chatbot], [msg_textbox, chatbot]).then(
+        bot_response_handler, [chatbot, current_chat_file_state], [chatbot, current_chat_file_state]
+    )
+    
+    # After sending a message, refresh the chat list display
+    msg_submit_event.then(fn=update_chat_list_display, inputs=None, outputs=all_chat_list_components)
+    send_click_event.then(fn=update_chat_list_display, inputs=None, outputs=all_chat_list_components)
 
     def start_new_chat():
-        # Clear chatbot, reset both session states, clear input box, and clear in-memory messages
-        return [], None, None, "", []
+        return [], None
 
-    new_chat_btn.click(start_new_chat, None, [chatbot, current_chat_file_state, last_session_state, msg_textbox, messages_state])
+    new_chat_btn.click(start_new_chat, None, [chatbot, current_chat_file_state])
     
     # When the app loads, populate the list for the first time
     demo.load(fn=update_chat_list_display, inputs=None, outputs=all_chat_list_components)
@@ -261,4 +299,6 @@ if __name__ == "__main__":
     server_port = int(os.getenv("GRADIO_SERVER_PORT", os.getenv("PORT", 7860)))
 
     print(f"Starting Gradio UI on {server_name}:{server_port}... Open the URL in your browser.")
+    # Enable queuing so generator-based streaming works smoothly
+    demo.queue()
     demo.launch(server_name=server_name, server_port=server_port, allowed_paths=[PDF_DIRECTORY])

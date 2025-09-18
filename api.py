@@ -1,11 +1,13 @@
 import os
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers import AutoTokenizer, AutoModelForCausalLM, TextIteratorStreamer
 from huggingface_hub import snapshot_download, login as hf_login
 from src.chatbot.retriever import VectorSearch
 import time
 import uvicorn
 from fastapi import FastAPI, HTTPException, status
+from fastapi.responses import StreamingResponse
+import threading
 from pydantic import BaseModel
 import config
 from src.utils.database import (
@@ -273,6 +275,89 @@ async def process_user_query(request: QueryRequest):
         pass
 
     return QueryResponse(answer=answer, retrieved_sources=list(sources), retrieval_time_seconds=retrieval_time, generation_time_seconds=generation_time, total_time_seconds=total_time)
+
+
+@app.post("/query/stream")
+async def process_user_query_stream(request: QueryRequest):
+    """Server-sent streaming endpoint. Emits incremental generated text as SSE.
+
+    Event format per message:
+      data: <text-chunk>\n\n
+    Final marker:
+      event: end\n
+      data: [DONE]\n\n
+    Notes:
+      - Keeps /query unchanged to avoid breaking existing clients.
+      - Logs the final assembled answer to the database upon completion.
+    """
+    if not model_available:
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=(f"Generation model not available: {model_load_error}."))
+    if not (search_engine_available if 'search_engine_available' in globals() else False):
+        raise HTTPException(status_code=status.HTTP_503_SERVICE_UNAVAILABLE, detail=(f"Search engine not available: {search_engine_error}."))
+
+    question = request.question
+
+    # Retrieval
+    ret_start = time.perf_counter()
+    results = search_engine.search(question, n=5)
+    ret_end = time.perf_counter()
+    retrieval_time = ret_end - ret_start
+
+    retrieved_context = ""
+    sources = set()
+    for r in results:
+        retrieved_context += f"Source: {r['source']}\nContent: {r['content']}\n\n"
+        sources.add(r['source'])
+
+    user_content = f"KNOWLEDGE BASE:\n{retrieved_context}\n---\nUSER QUESTION:\n{question}"
+    messages = [{"role": "system", "content": SYSTEM_PROMPT}, {"role": "user", "content": user_content}]
+
+    inputs = tokenizer.apply_chat_template(messages, tokenize=True, add_generation_prompt=True, return_tensors="pt").to(device)
+
+    streamer = TextIteratorStreamer(tokenizer, skip_prompt=True, skip_special_tokens=True)
+
+    gen_kwargs = {
+        "input_ids": inputs,
+        "max_new_tokens": request.max_tokens,
+        "do_sample": False,
+        "temperature": request.temperature,
+        "pad_token_id": tokenizer.eos_token_id,
+        "streamer": streamer,
+    }
+
+    def token_generator():
+        total_start = time.perf_counter()
+        # Run generation in a background thread so we can iterate the streamer
+        thread = threading.Thread(target=model.generate, kwargs=gen_kwargs)
+        thread.start()
+
+        assembled = []
+        try:
+            for text in streamer:
+                if not text:
+                    continue
+                assembled.append(text)
+                # SSE event: use only 'data' lines for broad compatibility
+                yield f"data: {text}\n\n"
+        except Exception as _e:
+            # Emit an error event and stop
+            yield f"event: error\n\n"
+        finally:
+            thread.join()
+
+        # Finalize timings and log once
+        total_end = time.perf_counter()
+        generation_time = total_end - ret_end
+        final_answer = "".join(assembled)
+        try:
+            log_api_interaction(question=question, answer=final_answer, sources=list(sources), retrieval_time=retrieval_time, generation_time=generation_time, total_time=(total_end - total_start))
+        except Exception:
+            pass
+        # Send a final marker so clients can close
+        yield "event: end\n\n"
+        yield "data: [DONE]\n\n"
+
+    return StreamingResponse(token_generator(), media_type="text/event-stream")
 
 
 @app.get("/logs")
