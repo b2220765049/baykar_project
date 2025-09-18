@@ -1,133 +1,98 @@
-# RAG API and UI (Dockerized)
+# Run with Docker Hub (no local build)
 
-Retrieval-Augmented Generation service with:
-- API: FastAPI (Uvicorn), logs and chat management (SQLite)
-- UI: Gradio web app with clickable example questions
-
-## Features
-- LLM: meta-llama/Meta-Llama-3-8B-Instruct
-- Retriever: FAISS + BioBERT (dmis-lab/biobert-base-cased-v1.2)
-- Persistence: SQLite (API logs, chat sessions/messages)
-- Docker Compose: separate API (8000) and UI (7860) services
-
-## Architecture
-```
-+-----------------+        Docker network        +-----------------+
-|     UI (7860)   |  --->  http://app:8000  ---> |   API (8000)    |
-|   Gradio app    |                              |  FastAPI+LLM    |
-+-----------------+                              +-----------------+
-            ^                                             |
-            |                                             v
-            |---------------------------------------------+
-```
+These instructions run API and UI directly from the published Docker Hub image. Commands are for Windows PowerShell.
 
 ## Prerequisites
-- Windows + Docker Desktop (WSL2 backend)
-- NVIDIA GPU recommended
-- Hugging Face account + accepted model terms + read token
+- Docker Desktop
+- NVIDIA GPU (optional) + NVIDIA Container Toolkit (for `--gpus all`)
+- Hugging Face token in your environment:
+  ```powershell
+  $env:HF_TOKEN = "<your_hf_token>"
+  ```
 
-## Hugging Face token and model access
-This project requires a Hugging Face access token with at least "read" scope and explicit permission to use gated models (for example `meta-llama/Meta-Llama-3-8B-Instruct`).
-
-Steps:
-
-1. Create or sign in to a Hugging Face account at https://huggingface.co.
-2. Visit the model page (for example https://huggingface.co/meta-llama/Meta-Llama-3-8B-Instruct) and accept any licensing or access terms shown on the model page. Some gated models require you to request or accept the license before downloads are allowed.
-3. Create an access token:
-  - Click your avatar → Settings → Access Tokens → New token.
-  - Give it a name and select the "read" scope (no write/admin scope required for model downloads).
-  - Copy the token; store it securely.
-4. Place the token into your `.env` file as:
-
-```ini
-HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
-Quick test (PowerShell): verify the token can authenticate to Hugging Face's whoami endpoint:
-
+Create local folders for persistence:
 ```powershell
-$env:HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxx"   # or ensure .env is loaded
-Invoke-RestMethod -Uri "https://huggingface.co/api/whoami-v2" -Headers @{ Authorization = "Bearer $env:HF_TOKEN" }
+New-Item -ItemType Directory -Force -Path .\data\logs | Out-Null
+New-Item -ItemType Directory -Force -Path .\hf-cache | Out-Null
 ```
 
-Or test inside the running `app` container (Docker Compose):
+## Option A — Run API and UI as two containers (recommended)
 
+1) Create an isolated network
 ```powershell
-docker compose exec app python -c "from huggingface_hub import HfApi; import os; api=HfApi(token=os.getenv('HF_TOKEN')); print(api.whoami())"
+docker network create rag-net
 ```
+
+2) Start the API
+```powershell
+docker run -d --gpus all --name medical-rag-api --network rag-net `
+  -p 8000:8000 `
+  -e HF_TOKEN="$env:HF_TOKEN" `
+  -v ${PWD}\data\logs:/app/data/logs `
+  -v ${PWD}\hf-cache:/home/appuser/.cache/huggingface `
+  kuark/medical_rag:latest
+```
+
+3) Start the UI (same image, run UI.py, point to API by container name)
+```powershell
+docker run -d --gpus all --name medical-rag-ui --network rag-net `
+  -p 7860:7860 `
+  -e API_URL="http://medical-rag-api:8000/query" `
+  -e GRADIO_SERVER_NAME="0.0.0.0" `
+  -e GRADIO_SERVER_PORT="7860" `
+  -e HF_TOKEN="$env:HF_TOKEN" `
+  -v ${PWD}\data\logs:/app/data/logs `
+  -v ${PWD}\hf-cache:/home/appuser/.cache/huggingface `
+  --entrypoint python `
+  kuark/medical_rag:latest UI.py
+```
+
+Open:
+- API health: http://localhost:8000/health
+- UI: http://localhost:7860
 
 Notes:
-- If a model is gated you must accept its license on the model page before `transformers` or `snapshot_download` can fetch its files.
-- Do not commit your token to version control. Use `.env` or Docker secrets in production.
+- The UI reaches the API via Docker DNS name `medical-rag-api`.
+- Chat history persists in `.\data\logs\chat_logs.db`.
 
-## Setup
-1) Create a `.env` next to `compose.yaml`:
-```ini
-HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxxx
-```
-
-2) Build and run:
+## Option B — API only
 ```powershell
-docker compose up --build
-# subsequent runs:
-docker compose up
+docker run -d --gpus all --name medical-rag-api `
+  -p 8000:8000 `
+  -e HF_TOKEN="$env:HF_TOKEN" `
+  -v ${PWD}\data\logs:/app/data/logs `
+  -v ${PWD}\hf-cache:/home/appuser/.cache/huggingface `
+  kuark/medical_rag:latest
 ```
+- Health: `Invoke-RestMethod http://127.0.0.1:8000/health`
+- Query: POST http://localhost:8000/query
 
-3) Open:
-- UI: http://localhost:7860
-- API: http://localhost:8000
-- Swagger UI: http://localhost:8000/docs
-- ReDoc: http://localhost:8000/redoc
-
-## REST API (overview)
-- GET /health
-- GET /meta
-- POST /query
-- GET /logs
-- GET /chats
-- POST /chats
-- GET /chats/{session_id}
-- DELETE /chats/{session_id}
-
-Interactive details and try-it-out: http://localhost:8000/docs
-
-Example PowerShell call:
+## Option C — UI only (point to a remote API)
 ```powershell
-$payload = @{ question = "What is hypertension?"; max_tokens = 150; temperature = 0.0 }
-Invoke-RestMethod -Uri "http://localhost:8000/query" -Method Post -ContentType "application/json" -Body ($payload | ConvertTo-Json -Depth 5)
+docker run -d --name medical-rag-ui `
+  -p 7860:7860 `
+  -e API_URL="http://YOUR_API_HOST:8000/query" `
+  -e GRADIO_SERVER_NAME="0.0.0.0" `
+  -e GRADIO_SERVER_PORT="7860" `
+  -e HF_TOKEN="$env:HF_TOKEN" `
+  kuark/medical_rag:latest `
+  --entrypoint python UI.py
 ```
-
-## Data & Evaluation
-- SQLite DB: `data/logs/chat_logs.db` (api_logs, chat_sessions, chat_messages)
-- Retriever assets:
-  - `data/vectorbase/hypertension_vectorbase_biobert_1000.index`
-  - `data/extracted_files/hypertension_chunks_biobert_1000.json`
-- Combined metrics CSV: `data/evaluate/combined_evaluation_metrics.csv`
-  - Produced from a 100-question QA set; includes human and automatic metrics.
-
-Notebook for quick DB inspection:
-- `src/utils/read_logs.ipynb`
 
 ## Troubleshooting
-- HF token warning: ensure `.env` contains `HF_TOKEN`.
-- UI can’t reach API: confirm both containers run; API on 8000, UI on 7860.
-- Chats not persisting: ensure Compose mounts `./data/logs:/app/data/logs` so `chat_logs.db` persists and is shared.
+- From the host, use http://localhost:8000 for API; container DNS names (e.g., `medical-rag-api`) work only inside Docker networks.
+- If Postman fails but PowerShell works, disable Postman proxy for localhost/127.0.0.1.
+- If port 8000/7860 is busy, change the left side of `-p`, e.g., `-p 18000:8000`.
+- Ensure volumes exist and are writable: `.\data\logs`, `.\hf-cache`.
+- Check logs:
+  ```powershell
+  docker logs medical-rag-api --tail 100
+  docker logs medical-rag-ui --tail 100
+  ```
 
-## Security
-- Do not commit `.env` or `chat_logs.db`.
-
-## Project Layout
-```
-c:\baykar_project
-├─ api.py
-├─ UI.py
-├─ compose.yaml
-├─ .env
-├─ data\
-│  ├─ logs\chat_logs.db
-│  ├─ evaluate\combined_evaluation_metrics.csv
-│  ├─ vectorbase\*.index
-│  └─ extracted_files\*.json
-└─ src\
-   └─ utils\read_logs.ipynb
+## Stop/cleanup
+```powershell
+docker stop medical-rag-ui medical-rag-api
+docker rm medical-rag-ui medical-rag-api
+docker network rm rag-net
 ```
