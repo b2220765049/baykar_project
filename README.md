@@ -17,7 +17,7 @@ Retrieval-Augmented Generation service with:
 |   Gradio app    |                              |  FastAPI+LLM    |
 +-----------------+                              +-----------------+
             ^                                             |
-            |                            HF Hub (token)   v
+            |                                             v
             |---------------------------------------------+
 ```
 
@@ -110,12 +110,9 @@ Notebook for quick DB inspection:
 ## Troubleshooting
 - HF token warning: ensure `.env` contains `HF_TOKEN`.
 - UI can’t reach API: confirm both containers run; API on 8000, UI on 7860.
-- First run slow: model shards download; later runs use cache.
-- GPU OOM: lower max tokens/sequence length or use a larger GPU.
 
 ## Security
 - Do not commit `.env` or `chat_logs.db`.
-- Keep ports private or front with a reverse proxy as needed.
 
 ## Project Layout
 ```
