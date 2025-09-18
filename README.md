@@ -30,7 +30,7 @@ docker run -d --gpus all --name medical-rag-api --network rag-net `
   -e HF_TOKEN="$env:HF_TOKEN" `
   -v ${PWD}\data\logs:/app/data/logs `
   -v ${PWD}\hf-cache:/home/appuser/.cache/huggingface `
-  kuark/medical_rag:latest
+  kuark7/medical_rag:latest
 ```
 
 3) Start the UI (same image, run UI.py, point to API by container name)
@@ -44,7 +44,7 @@ docker run -d --gpus all --name medical-rag-ui --network rag-net `
   -v ${PWD}\data\logs:/app/data/logs `
   -v ${PWD}\hf-cache:/home/appuser/.cache/huggingface `
   --entrypoint python `
-  kuark/medical_rag:latest UI.py
+  kuark7/medical_rag:latest UI.py
 ```
 
 Open:
