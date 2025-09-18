@@ -13,7 +13,8 @@ from src.utils.database import (
 )
 
 # --- Configuration ---
-API_URL = config.API_URL
+# Use configured API_URL as a hint, but auto-discover a reachable one at runtime.
+API_URL_HINT = os.getenv("API_URL", config.API_URL)
 PDF_DIRECTORY = config.PDF_DIRECTORY
 MAX_CHAT_ROWS = config.MAX_CHAT_ROWS
 
@@ -46,17 +47,59 @@ def delete_chat_history(session_id):
         print(f"Deleted chat session: {session_id}")
 
 # --- API helpers ---
-def _api_base() -> str:
-    # If API_URL ends with /query, strip it; else return as-is
-    if API_URL.endswith("/query"):
-        return API_URL[: -len("/query")]
-    return API_URL
+_API_URL_CACHE = None
+
+def _candidates() -> list[str]:
+    # Treat candidates as full /query endpoints
+    hints = []
+    # 1) Env/config hint
+    if API_URL_HINT:
+        hints.append(API_URL_HINT)
+    # 2) Common container DNS names
+    hints += [
+        "http://medical-rag-api:8000/query",
+        "http://app:8000/query",
+        "http://host.docker.internal:8000/query",
+        "http://127.0.0.1:8000/query",
+        "http://localhost:8000/query",
+    ]
+    # De-dup while preserving order
+    seen, uniq = set(), []
+    for h in hints:
+        if h and h not in seen:
+            seen.add(h)
+            uniq.append(h)
+    return uniq
+
+def _api_base(api_url: str) -> str:
+    # If endpoint ends with /query, return the base
+    return api_url[: -len("/query")] if api_url.endswith("/query") else api_url
+
+def _resolve_api_url() -> str:
+    global _API_URL_CACHE
+    if _API_URL_CACHE:
+        return _API_URL_CACHE
+    for cand in _candidates():
+        base = _api_base(cand).rstrip("/")
+        try:
+            r = requests.get(f"{base}/health", timeout=2)
+            if r.ok and isinstance(r.json(), dict) and r.json().get("ok") is True:
+                _API_URL_CACHE = cand
+                print(f"[UI] Using API URL: {_API_URL_CACHE}")
+                return _API_URL_CACHE
+        except Exception:
+            continue
+    # Fallback to hint even if not reachable; requests will surface errors later
+    _API_URL_CACHE = API_URL_HINT
+    print(f"[UI] Falling back to API URL hint: {_API_URL_CACHE}")
+    return _API_URL_CACHE
 
 # --- Core API Call Function (Unchanged for full reply) ---
 def call_rag_api(message: str, history: list) -> str:
     payload = {"question": message, "max_tokens": 1024, "temperature": 0.0}
     try:
-        response = requests.post(API_URL, json=payload, timeout=120)
+        api_url = _resolve_api_url()
+        response = requests.post(api_url, json=payload, timeout=120)
         response.raise_for_status()
         data = response.json()
         answer = data.get("answer", "Sorry, I received an invalid response from the backend.")
@@ -77,7 +120,8 @@ def stream_rag_api(message: str):
 
     Falls back to non-streaming if the stream endpoint is unavailable.
     """
-    stream_url = API_URL.rstrip("/") + "/stream"
+    api_url = _resolve_api_url()
+    stream_url = api_url.rstrip("/") + "/stream"
     payload = {"question": message, "max_tokens": 1024, "temperature": 0.0}
     try:
         with requests.post(stream_url, json=payload, stream=True, timeout=300) as r:
@@ -209,7 +253,7 @@ with gr.Blocks(theme=gr.themes.Soft(), css="footer {display: none !important}") 
             filename = chat_files[index]
             # Try deleting via API first
             try:
-                base = _api_base()
+                base = _api_base(_resolve_api_url())
                 requests.delete(f"{base}/chats/{filename}", timeout=15)
             except Exception:
                 pass

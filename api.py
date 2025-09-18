@@ -7,6 +7,7 @@ import time
 import uvicorn
 from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import StreamingResponse
+from fastapi.middleware.cors import CORSMiddleware
 import threading
 from pydantic import BaseModel
 import config
@@ -27,6 +28,15 @@ Medical RAG API: retrieves context and uses an LLM to generate grounded answers.
 """
 
 app = FastAPI(title="Medical RAG API", description=api_description, version="1.2.0")
+
+# Allow cross-origin requests from any origin (safe for demo/internal; tighten in prod)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 class QueryRequest(BaseModel):
